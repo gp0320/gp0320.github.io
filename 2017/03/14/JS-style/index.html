@@ -1,46 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>BLOOK</title>
-  <subtitle>GP&#39;s blog and book</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
   
-  <link href="http://blook.me/"/>
-  <updated>2017-03-14T09:48:57.000Z</updated>
-  <id>http://blook.me/</id>
+  <title>JS style | BLOOK | GP&#39;s blog and book</title>
+
   
-  <author>
-    <name>GP</name>
-    
-  </author>
+  <meta name="author" content="GP">
   
-  <generator uri="http://hexo.io/">Hexo</generator>
+
   
-  <entry>
-    <title>add music</title>
-    <link href="http://blook.me/2017/03/14/add-music/"/>
-    <id>http://blook.me/2017/03/14/add-music/</id>
-    <published>2017-03-14T09:48:45.000Z</published>
-    <updated>2017-03-14T09:48:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=407677659&auto=1&height=66"></iframe>]]></content>
-    
-    <summary type="html">
-    
-      &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=
-    
-    </summary>
-    
-    
-  </entry>
+  <meta name="description" content="javascript">
   
-  <entry>
-    <title>JS style</title>
-    <link href="http://blook.me/2017/03/14/JS-style/"/>
-    <id>http://blook.me/2017/03/14/JS-style/</id>
-    <published>2017-03-14T08:26:24.000Z</published>
-    <updated>2017-03-14T08:31:20.000Z</updated>
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="JS style"/>
+
+  <meta property="og:site_name" content="BLOOK"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BLOOK" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">BLOOK</a>
+    </h1>
+    <p class="site-description">GP&#39;s blog and book</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
     
-    <content type="html"><![CDATA[<h1 id="JavaScript-Style-Guide1-0"><a href="#JavaScript-Style-Guide1-0" class="headerlink" title="JavaScript Style Guide1.0"></a>JavaScript Style Guide1.0</h1><blockquote>
+    <h3 class="article-title"><span>JS style</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/03/14/JS-style/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-03-14T08:26:24.000Z">
+          2017-03-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="JavaScript-Style-Guide1-0"><a href="#JavaScript-Style-Guide1-0" class="headerlink" title="JavaScript Style Guide1.0"></a>JavaScript Style Guide1.0</h1><blockquote>
 <p>继承自airbnb的规范和angular最佳实践</p>
 </blockquote>
 <ul>
@@ -546,94 +591,70 @@
 <li>显式类型转换</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//bad</div><div class="line">const totalScore = this.reviewScore + &apos;&apos;;</div><div class="line">// good</div><div class="line">const totalScore = String(this.reviewScore);</div><div class="line">//bad inputValue=&apos;4&apos;</div><div class="line">const val = +inputValue;</div><div class="line">//good</div><div class="line">const val = Number(inputValue)</div><div class="line">//good</div><div class="line">const hasAge = !!age;</div></pre></td></tr></table></figure>
-]]></content>
+
+      
+    </div>
+
+  </div>
+
+  <!--<div>-->
+    <!--<p class="article-more-link">-->
+      <!--<a href="/2017/03/14/JS-style/">more</a>-->
+    <!--</p>-->
+  <!--</div>-->
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
     
-    <summary type="html">
+
     
-      &lt;h1 id=&quot;JavaScript-Style-Guide1-0&quot;&gt;&lt;a href=&quot;#JavaScript-Style-Guide1-0&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Style Guide1.0&quot;&gt;&lt;/a&gt;JavaScript Style Guide1.0&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;继承自airbnb的规范和angular最佳实践&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;TM组前端开发流程&lt;/li&gt;
-&lt;li&gt;工具函数库&lt;/li&gt;
-&lt;li&gt;ES6&lt;/li&gt;
-&lt;li&gt;angular最佳实践&lt;/li&gt;
-&lt;li&gt;常用工具函数和代码片段&lt;/li&gt;
-&lt;li&gt;js规范&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+
+    </div>
+
     
-    </summary>
-    
-    
-  </entry>
+  </div>
+</article>
+
   
-  <entry>
-    <title>test2t</title>
-    <link href="http://blook.me/2017/03/08/test2t/"/>
-    <id>http://blook.me/2017/03/08/test2t/</id>
-    <published>2017-03-08T02:26:28.000Z</published>
-    <updated>2017-03-08T02:44:43.000Z</updated>
+	<div id="comment">
+		
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2017/03/14/JS-style/" data-title="JS style" data-url="http://blook.me/2017/03/14/JS-style/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blookme"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0]
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+
+	</div>
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
     
-    <content type="html"><![CDATA[<h1 id="images-test"><a href="#images-test" class="headerlink" title="images test"></a>images test</h1><img src="/2017/03/08/test2t/mv.jpeg" alt="title of the picture" title="title of the picture">
-<hr>
-<p>图片加载成功</p>
-<pre><code>sfsdsdf
-sdfsdfsdfdf
-</code></pre>]]></content>
+    &copy; 2017 GP
     
-    <summary type="html">
+  </p>
+</footer>
     
-      &lt;h1 id=&quot;images-test&quot;&gt;&lt;a href=&quot;#images-test&quot; class=&quot;headerlink&quot; title=&quot;images test&quot;&gt;&lt;/a&gt;images test&lt;/h1&gt;&lt;img src=&quot;/2017/03/08/test2t/mv.jpeg&quot;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>categoriesdfs</title>
-    <link href="http://blook.me/2017/03/07/categoriesdfs/"/>
-    <id>http://blook.me/2017/03/07/categoriesdfs/</id>
-    <published>2017-03-07T11:10:55.000Z</published>
-    <updated>2017-03-07T11:11:57.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="前端" scheme="http://blook.me/categories/front/"/>
-    
-    
-      <category term="tttt" scheme="http://blook.me/tags/tttt/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://blook.me/2017/03/02/hello-world/"/>
-    <id>http://blook.me/2017/03/02/hello-world/</id>
-    <published>2017-03-02T10:10:53.000Z</published>
-    <updated>2017-03-02T10:10:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
-  
-</feed>
+  </div>
+</div>
+</body>
+</html>

@@ -63,6 +63,86 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/07/04/html2jade用法总结/"><span>html2jade用法总结</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/07/04/html2jade用法总结/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-04T08:18:11.000Z">
+          2017-07-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g html2jade</div></pre></td></tr></table></figure>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><ul>
+<li>-d, –double - 为属性使用双引号</li>
+<li>-o, –outdir - 输出生成的玉石文件的路径</li>
+<li>-n, –nspaces <n> - 缩进生成文件的空格数。默认为2个空格</n></li>
+<li>–donotencode - 中文编码</li>
+<li>–bodyless -  不包含 html + body 标签</li>
+<li>–noattrcomma - 属性之间不要逗号分隔</li>
+<li>–noemptypipe - omit lines with only pipe (‘|’) printable character 去掉|</li>
+</ul>
+<h2 id="中文编码"><a href="#中文编码" class="headerlink" title="中文编码"></a>中文编码</h2><blockquote>
+<p> 当我们使用 html2jade 转换含有中文的html时，若是在终端中转换只用加个参数 <code>--donotencode</code> 就好了。</p>
+</blockquote>
+<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">html2jade    ./views/campGroup/campGroup-editor.tmpl.html  --donotencode  </div><div class="line"> --bodyless   --noattrcomma   --noemptypipe   -o  </div><div class="line">    ./src/app/console/campGroup/editor/</div><div class="line">   </div><div class="line">  // 所有html文件 </div><div class="line">  *.html</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <!--<div>-->
+    <!--<p class="article-more-link">-->
+      <!--<a href="/2017/07/04/html2jade用法总结/">more</a>-->
+    <!--</p>-->
+  <!--</div>-->
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments gg"></i>
+        <span>
+          <a href="/2017/07/04/html2jade用法总结/#comment">Comment</a>
+        </span>
+      </span>
+      <span>
+        <i class="icon-more"></i>
+        <span>
+          <a href="/2017/07/04/html2jade用法总结/">Read More</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/03/14/add-music/"><span>add music</span></a></h3>
     
   
@@ -115,7 +195,7 @@
       <span>
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/14/add-music/">More</a>
+          <a href="/2017/03/14/add-music/">Read More</a>
         </span>
       </span>
     </div>
@@ -192,7 +272,7 @@
       <span>
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/14/JS-style/">More</a>
+          <a href="/2017/03/14/JS-style/">Read More</a>
         </span>
       </span>
     </div>
@@ -263,7 +343,7 @@ sdfsdfsdfdf
       <span>
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/08/test2t/">More</a>
+          <a href="/2017/03/08/test2t/">Read More</a>
         </span>
       </span>
     </div>
@@ -343,7 +423,7 @@ sdfsdfsdfdf
       <span>
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/07/categoriesdfs/">More</a>
+          <a href="/2017/03/07/categoriesdfs/">Read More</a>
         </span>
       </span>
     </div>
@@ -418,7 +498,7 @@ sdfsdfsdfdf
       <span>
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/02/hello-world/">More</a>
+          <a href="/2017/03/02/hello-world/">Read More</a>
         </span>
       </span>
     </div>
@@ -441,7 +521,7 @@ sdfsdfsdfdf
     Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
     </br>
     
-    &copy; 2017 GP
+    &copy; 2018 GP
     
   </p>
 </footer>

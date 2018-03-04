@@ -47,11 +47,11 @@
   <nav class="site-navigation">
     <ul>
       
-        <li><a href="/">主页</a></li>
+        <li><a href="/">Home</a></li>
       
-        <li><a href="/archives">归档</a></li>
+        <li><a href="/archives">Archives</a></li>
       
-        <li><a href="/about">关于</a></li>
+        <li><a href="/about">About</a></li>
       
     </ul>
   </nav>
@@ -59,6 +59,75 @@
 
     <main class="site-main posts-loop">
     
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/03/04/网络电视-ts视频格式网页播放/"><span>网络电视.ts视频格式+ffmpeg用法</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/03/04/网络电视-ts视频格式网页播放/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-04T09:43:41.000Z">
+          2018-03-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"><a href="#把本地的文件转成可供浏览器直接播放的视频格式用以下代码" class="headerlink" title="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"></a>把本地的文件转成可供浏览器直接播放的视频格式用以下代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i 文件名 -acodec aac  -vcodec libx264 -r 23 -f mp4 导出文件名</div></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <!--<div>-->
+    <!--<p class="article-more-link">-->
+      <!--<a href="/2018/03/04/网络电视-ts视频格式网页播放/">more</a>-->
+    <!--</p>-->
+  <!--</div>-->
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>  <a href="/2018/03/04/网络电视-ts视频格式网页播放/#comment">
+        <i class="icon-comments gg"></i>
+        <span>
+        Comment
+        </span>
+          </a>
+      </span>
+      <span>
+        <a href="/2018/03/04/网络电视-ts视频格式网页播放/">
+        <i class="icon-more"></i>
+        <span>
+          Read More
+        </span>
+          </a>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
   <article>
 
   
@@ -105,46 +174,6 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//在得到响应之后做某事</div><div class="line">Vue.axios.interceptors.response.use(response =&gt;&#123;</div><div class="line">	// 全局判断 code 码为0 直接return 需要使用的数据data</div><div class="line">  if(response.data.ret == 0) &#123;</div><div class="line">    return response.data.data</div><div class="line">  &#125; // 全局判断 code 码为1 跳到登录页</div><div class="line">  else if(response.data.ret == 1) &#123;</div><div class="line"></div><div class="line">     window.location.href = response.data.data.url</div><div class="line">    return Promise.reject(response.data.msg)</div><div class="line">  &#125; else &#123;</div><div class="line">  //  不为0，把 msg, reject 到 error 层</div><div class="line">    return Promise.reject(response.data.msg)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <hr>
-<h2 id="router-路由"><a href="#router-路由" class="headerlink" title="router 路由"></a>router 路由</h2><ul>
-<li>文件路径：router/index.js</li>
-</ul>
-<ol>
-<li>引用，依赖</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import Router from &apos;vue-router&apos;</div><div class="line">Vue.use(Router)</div></pre></td></tr></table></figure>
-<ol>
-<li>全局配置，请求headers<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">import campaign from &apos;./campaign.js&apos;</div><div class="line">import version from &apos;./version.js&apos;</div><div class="line"></div><div class="line">export default new Router(&#123;</div><div class="line"></div><div class="line">// 去掉#号</div><div class="line">  mode: &apos;history&apos;, </div><div class="line">  </div><div class="line">  routes: [</div><div class="line">    // &#123; path: &apos;/&apos;, redirect: &apos;/login&apos; &#125;,</div><div class="line">    // 重定向</div><div class="line">    &#123; path: &apos;/campaign&apos;, redirect: &apos;/campaign/search&apos; &#125;,</div><div class="line"></div><div class="line"></div><div class="line">	 // 登录页</div><div class="line">    &#123;</div><div class="line">      path: &apos;/&apos;,</div><div class="line">      name: &apos;login&apos;,</div><div class="line">      component: Login,</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">	 // layout 功能页</div><div class="line">    &#123;</div><div class="line">      path: &apos;&apos;,</div><div class="line">      abstract: true,</div><div class="line">      component: Layout,</div><div class="line">      // 子路由</div><div class="line">      children: [campaign, version]</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="campaign-js"><a href="#campaign-js" class="headerlink" title="campaign.js"></a>campaign.js</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 懒加载</div><div class="line">const campaignSearch = r =&gt; require.ensure([], () =&gt; r(require(&apos;@/components/campaign/Search.vue&apos;)), )</div><div class="line"></div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  path: &apos;/campaign&apos;,</div><div class="line">  name: &apos;campaign&apos;,</div><div class="line">  component: &#123;template: `&lt;div&gt;&lt;router-view&gt;&lt;/router-view&gt;&lt;/div&gt;`&#125;,</div><div class="line">  children: [</div><div class="line">    &#123;</div><div class="line">      path: &apos;search&apos;,  //   注意子路由前 不加 /</div><div class="line">      name: &apos;search&apos;,</div><div class="line">      component: campaignSearch,</div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 字符串 --&gt;</div><div class="line">&lt;router-link to=&quot;home&quot;&gt;Home&lt;/router-link&gt;</div><div class="line">&lt;!-- 渲染结果 --&gt;</div><div class="line">&lt;a href=&quot;home&quot;&gt;Home&lt;/a&gt;</div><div class="line"></div><div class="line">&lt;!-- 使用 v-bind 的 JS 表达式 --&gt;</div><div class="line">&lt;router-link v-bind:to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 不写 v-bind 也可以，就像绑定别的属性一样 --&gt;</div><div class="line">&lt;router-link :to=&quot;&apos;home&apos;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 同上 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;home&apos; &#125;&quot;&gt;Home&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 命名的路由 --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; name: &apos;user&apos;, params: &#123; userId: 123 &#125;&#125;&quot;&gt;User&lt;/router-link&gt;</div><div class="line"></div><div class="line">&lt;!-- 带查询参数，下面的结果为 /register?plan=private --&gt;</div><div class="line">&lt;router-link :to=&quot;&#123; path: &apos;register&apos;, query: &#123; plan: &apos;private&apos; &#125;&#125;&quot;&gt;Register&lt;/router-link&gt;</div></pre></td></tr></table></figure>
-<h3 id="router-link-编程式"><a href="#router-link-编程式" class="headerlink" title="router-link  编程式"></a>router-link  编程式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 字符串</div><div class="line">router.push(&apos;home&apos;)</div><div class="line"></div><div class="line">// 对象</div><div class="line">router.push(&#123; path: &apos;home&apos; &#125;)</div><div class="line"></div><div class="line">// 命名的路由</div><div class="line">router.push(&#123; name: &apos;user&apos;, params: &#123; userId: 123 &#125;&#125;)</div><div class="line"></div><div class="line">// 带查询参数，变成 /register?plan=private</div><div class="line">router.push(&#123; path: &apos;register&apos;, query: &#123; plan: &apos;private&apos; &#125;&#125;)</div></pre></td></tr></table></figure>
-<h3 id="路由信息对象的属性"><a href="#路由信息对象的属性" class="headerlink" title="路由信息对象的属性"></a>路由信息对象的属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">$route.path</div><div class="line"></div><div class="line">类型: string</div><div class="line"></div><div class="line">字符串，对应当前路由的路径，总是解析为绝对路径，如 &quot;/foo/bar&quot;。</div><div class="line"></div><div class="line">$route.params</div><div class="line"></div><div class="line">类型: Object</div><div class="line">一个 key/value 对象，包含了 动态片段 和 全匹配片段，如果没有路由参数，就是一个空对象。</div><div class="line"></div><div class="line">$route.query</div><div class="line"></div><div class="line">类型: Object</div><div class="line"></div><div class="line">一个 key/value 对象，表示 URL 查询参数。例如，对于路径 /foo?user=1，</div><div class="line">则有 $route.query.user == 1，如果没有查询参数，则是个空对象。</div><div class="line"></div><div class="line">$route.hash</div><div class="line"></div><div class="line">类型: string</div><div class="line"></div><div class="line">当前路由的 hash 值 (带 #) ，如果没有 hash 值，则为空字符串。</div></pre></td></tr></table></figure>
-<h3 id="单文件组件"><a href="#单文件组件" class="headerlink" title="单文件组件"></a>单文件组件</h3><blockquote>
-<p> 使用 jade + styl ，文件内容多 可以采用引入式</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;template lang=&quot;jade&quot;&gt;</div><div class="line">  .navigation(id=&quot;nav&quot;)</div><div class="line">    .header-top-bottom</div><div class="line">    ul.first-munu</div><div class="line">      li(v-for=&quot;(item,$index) in menuList&quot; )</div><div class="line">        router-link(v-bind:to=&quot;item.router&quot;  active-class=&quot;active&quot;)</div><div class="line">          span &#123;&#123;item.name&#125;&#125;</div><div class="line"></div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script src=&quot;./header-nav.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;style lang=&quot;styl&quot; src=&quot;./header-nav.styl&quot; scoped&gt;&lt;/style&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">scoped  局部样式</div></pre></td></tr></table></figure>
-<h3 id="自定义全局组件"><a href="#自定义全局组件" class="headerlink" title="自定义全局组件"></a>自定义全局组件</h3><blockquote>
-<p> RmSelect 为例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">import mySelect from &apos;./Select.vue&apos;</div><div class="line">// 这里是重点</div><div class="line">const RmSelect = &#123;</div><div class="line">  install(Vue)&#123;</div><div class="line">    Vue.component(&apos;RmSelect&apos;,mySelect)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">// 导出组件</div><div class="line">export default RmSelect</div><div class="line"></div><div class="line"></div><div class="line">main.js</div><div class="line">// 自定义全局组件</div><div class="line">import RmSelect from &apos;@/components/select&apos;</div><div class="line">Vue.use(RmSelect)</div></pre></td></tr></table></figure>
-<h3 id="Vuex"><a href="#Vuex" class="headerlink" title="Vuex"></a>Vuex</h3><ul>
-<li>state 数据</li>
-<li><p>getter 特别像computed。有时候我们需要从 store 中的 state 中派生出一些状态，例如对列表进行过滤并计数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">  state: &#123;</div><div class="line">    todos: [</div><div class="line">      &#123; id: 1, text: &apos;...&apos;, done: true &#125;,</div><div class="line">      &#123; id: 2, text: &apos;...&apos;, done: false &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  getters: &#123;</div><div class="line">    doneTodos: state =&gt; &#123;</div><div class="line">      return state.todos.filter(todo =&gt; todo.done)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>Mutations 更改 Vuex 的 store 中的状态的唯一方法</p>
-</li>
-<li>Action   Action 提交的是 mutation，而不是直接变更状态。在 action 内部执行异步操作.<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">const store = new Vuex.Store(&#123;</div><div class="line">  state: &#123;</div><div class="line">    count: 0</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  mutations: &#123;</div><div class="line">    increment (state) &#123;</div><div class="line">      state.count++</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  actions: &#123;</div><div class="line">    increment (context) &#123;</div><div class="line">      context.commit(&apos;increment&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">// Action 通过 store.dispatch 方法触发：</div><div class="line">store.dispatch(&apos;increment&apos;)</div><div class="line"></div><div class="line">// Mutations 通过 store.commit 方法触发：</div><div class="line">store.commit(&apos;increment&apos;)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>1、 组件的 methods 里面的 function, 例：this.$store.dispatch(‘getList’） 发送到 Action<br>2、Action 收到后 进行异步 http 请求，请求完成后 commit(‘getList’,res) 到 mutations<br>3、 mutations 的function 的第一个参数是 state,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">mutations = &#123;</div><div class="line">  getList (state, res) &#123;</div><div class="line"></div><div class="line">      state.list = res.list</div><div class="line">      state.status = res.status</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">// 默认情况下，模块内部的 action、mutation 和 getter 是注册在全局命名空间的</div><div class="line"></div><div class="line">namespaced: true,</div><div class="line"></div><div class="line">// 在 modules 的内部不需要加 命名空间的前缀</div><div class="line">getters[&apos;isAdmin&apos;]</div><div class="line">dispatch(&apos;login&apos;)</div><div class="line">commit(&apos;login&apos;)</div><div class="line"></div><div class="line">// 在外部的组件需要像下面这样使用</div><div class="line">getters[&apos;account/isAdmin&apos;]</div><div class="line">dispatch(&apos;account/login&apos;)</div><div class="line">commit(&apos;account/login&apos;)</div></pre></td></tr></table></figure>
-<h4 id="end"><a href="#end" class="headerlink" title="end:"></a>end:</h4><pre><code>mixins 没有讲到,后来知道用法
-工作之余学了两周，第一次用vue做东西，实践了几个栏目，当时用的还是很全面。
-还看了看vue的源码，监听数据变化的原理
-</code></pre>
       
     </div>
 
@@ -167,17 +196,20 @@
 
     
     <div class="article-meta pull-right">
-      <span>
+      <span>  <a href="/2017/07/24/vue-vuex-axios-router初次分享/#comment">
         <i class="icon-comments gg"></i>
         <span>
-          <a href="/2017/07/24/vue-vuex-axios-router初次分享/#comment">Comment</a>
+        Comment
         </span>
+          </a>
       </span>
       <span>
+        <a href="/2017/07/24/vue-vuex-axios-router初次分享/">
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/07/24/vue-vuex-axios-router初次分享/">Read More</a>
+          Read More
         </span>
+          </a>
       </span>
     </div>
     
@@ -214,17 +246,12 @@
 <h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><ul>
 <li>-d, –double - 为属性使用双引号</li>
 <li>-o, –outdir - 输出生成的文件路径</li>
-<li>-n, –nspaces <n> - 缩进生成文件的空格数。默认为2个空格</n></li>
+<li>-n, –nspaces <n> - 缩进生成文件的空格数。默认为2个空格</li>
 <li>–donotencode - 中文编码</li>
 <li>–bodyless -  不包含 html + body 标签</li>
 <li>–noattrcomma - 属性之间不要逗号分隔</li>
 <li>–noemptypipe - omit lines with only pipe (‘|’) printable character 去掉|</li>
 </ul>
-<h2 id="中文编码"><a href="#中文编码" class="headerlink" title="中文编码"></a>中文编码</h2><blockquote>
-<p> 当我们使用 html2jade 转换含有中文的html时，若是在终端中转换只用加个参数 <code>--donotencode</code> 就好了。</p>
-</blockquote>
-<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">html2jade    ./views/campGroup/campGroup-editor.tmpl.html  --donotencode  </div><div class="line"> --bodyless   --noattrcomma   --noemptypipe   -o  </div><div class="line">    ./src/app/console/campGroup/editor/</div><div class="line">   </div><div class="line">  // 所有html文件 </div><div class="line">  *.html</div></pre></td></tr></table></figure>
-
       
     </div>
 
@@ -247,17 +274,20 @@
 
     
     <div class="article-meta pull-right">
-      <span>
+      <span>  <a href="/2017/07/04/html2jade用法总结/#comment">
         <i class="icon-comments gg"></i>
         <span>
-          <a href="/2017/07/04/html2jade用法总结/#comment">Comment</a>
+        Comment
         </span>
+          </a>
       </span>
       <span>
+        <a href="/2017/07/04/html2jade用法总结/">
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/07/04/html2jade用法总结/">Read More</a>
+          Read More
         </span>
+          </a>
       </span>
     </div>
     
@@ -313,17 +343,20 @@
 
     
     <div class="article-meta pull-right">
-      <span>
+      <span>  <a href="/2017/03/14/add-music/#comment">
         <i class="icon-comments gg"></i>
         <span>
-          <a href="/2017/03/14/add-music/#comment">Comment</a>
+        Comment
         </span>
+          </a>
       </span>
       <span>
+        <a href="/2017/03/14/add-music/">
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/14/add-music/">Read More</a>
+          Read More
         </span>
+          </a>
       </span>
     </div>
     
@@ -390,17 +423,20 @@
 
     
     <div class="article-meta pull-right">
-      <span>
+      <span>  <a href="/2017/03/14/JS-style/#comment">
         <i class="icon-comments gg"></i>
         <span>
-          <a href="/2017/03/14/JS-style/#comment">Comment</a>
+        Comment
         </span>
+          </a>
       </span>
       <span>
+        <a href="/2017/03/14/JS-style/">
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/14/JS-style/">Read More</a>
+          Read More
         </span>
+          </a>
       </span>
     </div>
     
@@ -461,17 +497,20 @@ sdfsdfsdfdf
 
     
     <div class="article-meta pull-right">
-      <span>
+      <span>  <a href="/2017/03/08/test2t/#comment">
         <i class="icon-comments gg"></i>
         <span>
-          <a href="/2017/03/08/test2t/#comment">Comment</a>
+        Comment
         </span>
+          </a>
       </span>
       <span>
+        <a href="/2017/03/08/test2t/">
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/08/test2t/">Read More</a>
+          Read More
         </span>
+          </a>
       </span>
     </div>
     
@@ -541,17 +580,20 @@ sdfsdfsdfdf
 
     
     <div class="article-meta pull-right">
-      <span>
+      <span>  <a href="/2017/03/07/categoriesdfs/#comment">
         <i class="icon-comments gg"></i>
         <span>
-          <a href="/2017/03/07/categoriesdfs/#comment">Comment</a>
+        Comment
         </span>
+          </a>
       </span>
       <span>
+        <a href="/2017/03/07/categoriesdfs/">
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/07/categoriesdfs/">Read More</a>
+          Read More
         </span>
+          </a>
       </span>
     </div>
     
@@ -616,17 +658,20 @@ sdfsdfsdfdf
 
     
     <div class="article-meta pull-right">
-      <span>
+      <span>  <a href="/2017/03/02/hello-world/#comment">
         <i class="icon-comments gg"></i>
         <span>
-          <a href="/2017/03/02/hello-world/#comment">Comment</a>
+        Comment
         </span>
+          </a>
       </span>
       <span>
+        <a href="/2017/03/02/hello-world/">
         <i class="icon-more"></i>
         <span>
-          <a href="/2017/03/02/hello-world/">Read More</a>
+          Read More
         </span>
+          </a>
       </span>
     </div>
     

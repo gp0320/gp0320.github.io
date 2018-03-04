@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blook.me/"/>
-  <updated>2018-03-04T09:33:08.842Z</updated>
+  <updated>2018-03-04T10:20:14.230Z</updated>
   <id>http://blook.me/</id>
   
   <author>
@@ -16,11 +16,29 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>网络电视.ts视频格式+ffmpeg用法</title>
+    <link href="http://blook.me/2018/03/04/%E7%BD%91%E7%BB%9C%E7%94%B5%E8%A7%86-ts%E8%A7%86%E9%A2%91%E6%A0%BC%E5%BC%8F%E7%BD%91%E9%A1%B5%E6%92%AD%E6%94%BE/"/>
+    <id>http://blook.me/2018/03/04/网络电视-ts视频格式网页播放/</id>
+    <published>2018-03-04T09:43:41.000Z</published>
+    <updated>2018-03-04T10:20:14.230Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"><a href="#把本地的文件转成可供浏览器直接播放的视频格式用以下代码" class="headerlink" title="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"></a>把本地的文件转成可供浏览器直接播放的视频格式用以下代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i 文件名 -acodec aac  -vcodec libx264 -r 23 -f mp4 导出文件名</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;把本地的文件转成可供浏览器直接播放的视频格式用以下代码&quot;&gt;&lt;a href=&quot;#把本地的文件转成可供浏览器直接播放的视频格式用以下代码&quot; class=&quot;headerlink&quot; title=&quot;把本地的文件转成可供浏览器直接播放的视频格式用以下代码&quot;&gt;&lt;/a&gt;把本地的文
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>vue2+vuex+axios+router初次分享</title>
     <link href="http://blook.me/2017/07/24/vue-vuex-axios-router%E5%88%9D%E6%AC%A1%E5%88%86%E4%BA%AB/"/>
     <id>http://blook.me/2017/07/24/vue-vuex-axios-router初次分享/</id>
     <published>2017-07-24T09:11:08.000Z</published>
-    <updated>2018-03-04T09:33:08.842Z</updated>
+    <updated>2018-03-04T09:45:05.997Z</updated>
     
     <content type="html"><![CDATA[<h2 id="配置转发"><a href="#配置转发" class="headerlink" title="配置转发"></a>配置转发</h2><ul>
 <li>文件路径：config/index.js<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">port: 4444, // 端口</div><div class="line">proxyTable: &#123;</div><div class="line"></div><div class="line">    &apos;/dev&apos;:&#123;</div><div class="line">      target: &apos;http://dev.api.pdb.com/http/&apos;,</div><div class="line">      pathRewrite: &#123;</div><div class="line">        &apos;^/dev&apos;: &apos;&apos;   // &apos;dev&apos;转换成空字符串</div><div class="line">      &#125;,</div><div class="line">      changeOrigin: true, // 代理转发</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
@@ -44,6 +62,7 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//在得到响应之后做某事</div><div class="line">Vue.axios.interceptors.response.use(response =&gt;&#123;</div><div class="line">	// 全局判断 code 码为0 直接return 需要使用的数据data</div><div class="line">  if(response.data.ret == 0) &#123;</div><div class="line">    return response.data.data</div><div class="line">  &#125; // 全局判断 code 码为1 跳到登录页</div><div class="line">  else if(response.data.ret == 1) &#123;</div><div class="line"></div><div class="line">     window.location.href = response.data.data.url</div><div class="line">    return Promise.reject(response.data.msg)</div><div class="line">  &#125; else &#123;</div><div class="line">  //  不为0，把 msg, reject 到 error 层</div><div class="line">    return Promise.reject(response.data.msg)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <hr>
+<a id="more"></a>
 <h2 id="router-路由"><a href="#router-路由" class="headerlink" title="router 路由"></a>router 路由</h2><ul>
 <li>文件路径：router/index.js</li>
 </ul>
@@ -88,7 +107,27 @@
     <summary type="html">
     
       &lt;h2 id=&quot;配置转发&quot;&gt;&lt;a href=&quot;#配置转发&quot; class=&quot;headerlink&quot; title=&quot;配置转发&quot;&gt;&lt;/a&gt;配置转发&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;文件路径：config/index.js&lt;figure class=&quot;highlight plain&quot;&gt;&lt;tab
+&lt;li&gt;文件路径：config/index.js&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;port: 4444, // 端口&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;proxyTable: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;apos;/dev&amp;apos;:&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      target: &amp;apos;http://dev.api.pdb.com/http/&amp;apos;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      pathRewrite: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;apos;^/dev&amp;apos;: &amp;apos;&amp;apos;   // &amp;apos;dev&amp;apos;转换成空字符串&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      changeOrigin: true, // 代理转发&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;axios-发送-http&quot;&gt;&lt;a href=&quot;#axios-发送-http&quot; class=&quot;headerlink&quot; title=&quot;axios 发送 http&quot;&gt;&lt;/a&gt;axios 发送 http&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;文件路径：main.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;引用，依赖&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;import axios from &amp;apos;axios&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;import VueAxios from &amp;apos;vue-axios&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Vue.use(VueAxios, axios)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;全局配置，请求headers&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Vue.axios.defaults.baseURL = &amp;apos;/dev&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Vue.axios.defaults.headers.common[&amp;apos;X-Auth-Token&amp;apos;] = Vue.localStorage.get(&amp;apos;token&amp;apos;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Vue.axios.defaults.headers.common[&amp;apos;X-Auth-Advertiser&amp;apos;] = &amp;apos;-1&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Vue.axios.defaults.headers.common[&amp;apos;content-type&amp;apos;] = &amp;apos;application/x-www-form-urlencoded; charset=UTF-8&amp;apos;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;全局配置,拦截器&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//在发送请求之前做某事&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;import Qs from &amp;quot;querystring&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Vue.axios.interceptors.request.use(config=&amp;gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  config.data = Qs.stringify(config.data)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  return config;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;//在得到响应之后做某事&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Vue.axios.interceptors.response.use(response =&amp;gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	// 全局判断 code 码为0 直接return 需要使用的数据data&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  if(response.data.ret == 0) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return response.data.data&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125; // 全局判断 code 码为1 跳到登录页&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  else if(response.data.ret == 1) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;     window.location.href = response.data.data.url&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return Promise.reject(response.data.msg)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125; else &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  //  不为0，把 msg, reject 到 error 层&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    return Promise.reject(response.data.msg)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
     
     </summary>
     
@@ -100,7 +139,7 @@
     <link href="http://blook.me/2017/07/04/html2jade%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93/"/>
     <id>http://blook.me/2017/07/04/html2jade用法总结/</id>
     <published>2017-07-04T08:18:11.000Z</published>
-    <updated>2018-03-04T09:04:56.896Z</updated>
+    <updated>2018-03-04T09:45:05.995Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g html2jade</div></pre></td></tr></table></figure>
 <h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><ul>
@@ -112,6 +151,7 @@
 <li>–noattrcomma - 属性之间不要逗号分隔</li>
 <li>–noemptypipe - omit lines with only pipe (‘|’) printable character 去掉|</li>
 </ul>
+<a id="more"></a>    
 <h2 id="中文编码"><a href="#中文编码" class="headerlink" title="中文编码"></a>中文编码</h2><blockquote>
 <p> 当我们使用 html2jade 转换含有中文的html时，若是在终端中转换只用加个参数 <code>--donotencode</code> 就好了。</p>
 </blockquote>
@@ -120,7 +160,16 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div c
+      &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm install -g html2jade&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;参数说明&quot;&gt;&lt;a href=&quot;#参数说明&quot; class=&quot;headerlink&quot; title=&quot;参数说明&quot;&gt;&lt;/a&gt;参数说明&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;-d, –double - 为属性使用双引号&lt;/li&gt;
+&lt;li&gt;-o, –outdir - 输出生成的文件路径&lt;/li&gt;
+&lt;li&gt;-n, –nspaces &lt;n&gt; - 缩进生成文件的空格数。默认为2个空格&lt;/li&gt;
+&lt;li&gt;–donotencode - 中文编码&lt;/li&gt;
+&lt;li&gt;–bodyless -  不包含 html + body 标签&lt;/li&gt;
+&lt;li&gt;–noattrcomma - 属性之间不要逗号分隔&lt;/li&gt;
+&lt;li&gt;–noemptypipe - omit lines with only pipe (‘|’) printable character 去掉|&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     

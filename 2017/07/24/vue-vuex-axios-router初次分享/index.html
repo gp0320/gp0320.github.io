@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>BLOOK | GP&#39;s blog and book</title>
+  <title>vue2+vuex+axios+router初次分享 | BLOOK | GP&#39;s blog and book</title>
 
   
   <meta name="author" content="GP">
@@ -14,12 +14,15 @@
   
 
   
+  
+  <meta name="keywords" content="">
+  
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="vue2+vuex+axios+router初次分享"/>
 
   <meta property="og:site_name" content="BLOOK"/>
 
@@ -58,12 +61,11 @@
 </header>
 
     <main class="site-main posts-loop">
-    
-  <article>
+    <article>
 
   
     
-    <h3 class="article-title"><a href="/2017/07/24/vue-vuex-axios-router初次分享/"><span>vue2+vuex+axios+router初次分享</span></a></h3>
+    <h3 class="article-title"><span>vue2+vuex+axios+router初次分享</span></h3>
     
   
 
@@ -190,480 +192,34 @@
     </div>
 
     
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments gg"></i>
-        <span>
-          <a href="/2017/07/24/vue-vuex-axios-router初次分享/#comment">Comment</a>
-        </span>
-      </span>
-      <span>
-        <i class="icon-more"></i>
-        <span>
-          <a href="/2017/07/24/vue-vuex-axios-router初次分享/">Read More</a>
-        </span>
-      </span>
-    </div>
-    
   </div>
 </article>
 
-
-
-  <article>
-
   
-    
-    <h3 class="article-title"><a href="/2017/07/04/html2jade用法总结/"><span>html2jade用法总结</span></a></h3>
-    
-  
+	<div id="comment">
+		
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2017/07/24/vue-vuex-axios-router初次分享/" data-title="vue2+vuex+axios+router初次分享" data-url="http://blook.me/2017/07/24/vue-vuex-axios-router初次分享/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blookme"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0]
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+
+	</div>
 
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/07/04/html2jade用法总结/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-07-04T08:18:11.000Z">
-          2017-07-04
-        </time>
-      </a>
-    </span>
-  </div>
 
 
-  
 
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g html2jade</div></pre></td></tr></table></figure>
-<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><ul>
-<li>-d, –double - 为属性使用双引号</li>
-<li>-o, –outdir - 输出生成的文件路径</li>
-<li>-n, –nspaces <n> - 缩进生成文件的空格数。默认为2个空格</n></li>
-<li>–donotencode - 中文编码</li>
-<li>–bodyless -  不包含 html + body 标签</li>
-<li>–noattrcomma - 属性之间不要逗号分隔</li>
-<li>–noemptypipe - omit lines with only pipe (‘|’) printable character 去掉|</li>
-</ul>
-<h2 id="中文编码"><a href="#中文编码" class="headerlink" title="中文编码"></a>中文编码</h2><blockquote>
-<p> 当我们使用 html2jade 转换含有中文的html时，若是在终端中转换只用加个参数 <code>--donotencode</code> 就好了。</p>
-</blockquote>
-<h2 id="用例"><a href="#用例" class="headerlink" title="用例"></a>用例</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">html2jade    ./views/campGroup/campGroup-editor.tmpl.html  --donotencode  </div><div class="line"> --bodyless   --noattrcomma   --noemptypipe   -o  </div><div class="line">    ./src/app/console/campGroup/editor/</div><div class="line">   </div><div class="line">  // 所有html文件 </div><div class="line">  *.html</div></pre></td></tr></table></figure>
-
-      
-    </div>
-
-  </div>
-
-  <!--<div>-->
-    <!--<p class="article-more-link">-->
-      <!--<a href="/2017/07/04/html2jade用法总结/">more</a>-->
-    <!--</p>-->
-  <!--</div>-->
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments gg"></i>
-        <span>
-          <a href="/2017/07/04/html2jade用法总结/#comment">Comment</a>
-        </span>
-      </span>
-      <span>
-        <i class="icon-more"></i>
-        <span>
-          <a href="/2017/07/04/html2jade用法总结/">Read More</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/03/14/add-music/"><span>add music</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/03/14/add-music/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-03-14T09:48:45.000Z">
-          2017-03-14
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=407677659&auto=1&height=66"></iframe>
-      
-    </div>
-
-  </div>
-
-  <!--<div>-->
-    <!--<p class="article-more-link">-->
-      <!--<a href="/2017/03/14/add-music/">more</a>-->
-    <!--</p>-->
-  <!--</div>-->
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments gg"></i>
-        <span>
-          <a href="/2017/03/14/add-music/#comment">Comment</a>
-        </span>
-      </span>
-      <span>
-        <i class="icon-more"></i>
-        <span>
-          <a href="/2017/03/14/add-music/">Read More</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/03/14/JS-style/"><span>JS style</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/03/14/JS-style/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-03-14T08:26:24.000Z">
-          2017-03-14
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="JavaScript-Style-Guide1-0"><a href="#JavaScript-Style-Guide1-0" class="headerlink" title="JavaScript Style Guide1.0"></a>JavaScript Style Guide1.0</h1><blockquote>
-<p>继承自airbnb的规范和angular最佳实践</p>
-</blockquote>
-<ul>
-<li>TM组前端开发流程</li>
-<li>工具函数库</li>
-<li>ES6</li>
-<li>angular最佳实践</li>
-<li>常用工具函数和代码片段</li>
-<li>js规范</li>
-</ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
-      
-    </div>
-
-  </div>
-
-  <!--<div>-->
-    <!--<p class="article-more-link">-->
-      <!--<a href="/2017/03/14/JS-style/">more</a>-->
-    <!--</p>-->
-  <!--</div>-->
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments gg"></i>
-        <span>
-          <a href="/2017/03/14/JS-style/#comment">Comment</a>
-        </span>
-      </span>
-      <span>
-        <i class="icon-more"></i>
-        <span>
-          <a href="/2017/03/14/JS-style/">Read More</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/03/08/test2t/"><span>test2t</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/03/08/test2t/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-03-08T02:26:28.000Z">
-          2017-03-08
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h1 id="images-test"><a href="#images-test" class="headerlink" title="images test"></a>images test</h1><img src="/2017/03/08/test2t/mv.jpeg" alt="title of the picture" title="title of the picture">
-<hr>
-<p>图片加载成功</p>
-<pre><code>sfsdsdf
-sdfsdfsdfdf
-</code></pre>
-      
-    </div>
-
-  </div>
-
-  <!--<div>-->
-    <!--<p class="article-more-link">-->
-      <!--<a href="/2017/03/08/test2t/">more</a>-->
-    <!--</p>-->
-  <!--</div>-->
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments gg"></i>
-        <span>
-          <a href="/2017/03/08/test2t/#comment">Comment</a>
-        </span>
-      </span>
-      <span>
-        <i class="icon-more"></i>
-        <span>
-          <a href="/2017/03/08/test2t/">Read More</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/03/07/categoriesdfs/"><span>categoriesdfs</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/03/07/categoriesdfs/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-03-07T11:10:55.000Z">
-          2017-03-07
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        
-      
-    </div>
-
-  </div>
-
-  <!--<div>-->
-    <!--<p class="article-more-link">-->
-      <!--<a href="/2017/03/07/categoriesdfs/">more</a>-->
-    <!--</p>-->
-  <!--</div>-->
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/front/">前端</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/tttt/">tttt</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments gg"></i>
-        <span>
-          <a href="/2017/03/07/categoriesdfs/#comment">Comment</a>
-        </span>
-      </span>
-      <span>
-        <i class="icon-more"></i>
-        <span>
-          <a href="/2017/03/07/categoriesdfs/">Read More</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2017/03/02/hello-world/"><span>Hello World</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/03/02/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-03-02T10:10:53.000Z">
-          2017-03-02
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-
-  </div>
-
-  <!--<div>-->
-    <!--<p class="article-more-link">-->
-      <!--<a href="/2017/03/02/hello-world/">more</a>-->
-    <!--</p>-->
-  <!--</div>-->
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments gg"></i>
-        <span>
-          <a href="/2017/03/02/hello-world/#comment">Comment</a>
-        </span>
-      </span>
-      <span>
-        <i class="icon-more"></i>
-        <span>
-          <a href="/2017/03/02/hello-world/">Read More</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-
-<nav class="pagination">
-  
-  
-</nav>
     </main>
 
     <footer class="site-footer">

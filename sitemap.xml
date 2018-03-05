@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blook.me/about/index.html</loc>
+    
+    <lastmod>2018-03-05T03:16:29.178Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blook.me/2017/12/14/DailyEnglish/</loc>
     
     <lastmod>2018-03-05T02:57:50.872Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://blook.me/2017/03/14/JS-style/</loc>
     
     <lastmod>2017-03-14T08:31:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blook.me/about/index.html</loc>
-    
-    <lastmod>2017-03-07T11:17:50.000Z</lastmod>
     
   </url>
   

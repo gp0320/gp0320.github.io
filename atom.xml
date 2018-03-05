@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blook.me/"/>
-  <updated>2018-03-04T10:20:14.230Z</updated>
+  <updated>2018-03-05T02:50:51.921Z</updated>
   <id>http://blook.me/</id>
   
   <author>
@@ -16,13 +16,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>angular实现列表逐条动画指令</title>
+    <link href="http://blook.me/2018/03/05/angular%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E9%80%90%E6%9D%A1%E5%8A%A8%E7%94%BB/"/>
+    <id>http://blook.me/2018/03/05/angular实现列表逐条动画/</id>
+    <published>2018-03-05T02:36:08.000Z</published>
+    <updated>2018-03-05T02:50:51.921Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="效果演示"><a href="#效果演示" class="headerlink" title="效果演示"></a>效果演示</h1><img src="/2018/03/05/angular实现列表逐条动画/11.gif" alt="title of the picture" title="title of the picture">
+<a id="more"></a>
+<h1 id="自定义指令代码"><a href="#自定义指令代码" class="headerlink" title="自定义指令代码"></a>自定义指令代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">.directive(&apos;reanimate&apos;, ()=&gt;&#123;  // 列表渐进动画</div><div class="line">    return &#123;</div><div class="line">        restrict: &apos;A&apos;,</div><div class="line">        scope: &#123;</div><div class="line">            index: &apos;@&apos;,</div><div class="line">        &#125;,</div><div class="line">        link(scope, element) &#123;</div><div class="line">            element.css(&#123;&apos;transition-delay&apos;:0.05 * scope.index+&apos;s&apos;&#125;)</div><div class="line"></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="指令调用"><a href="#指令调用" class="headerlink" title="指令调用"></a>指令调用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tr.slide-right(ng-repeat=&apos;item in vm.saleList&apos; reanimate index=&apos;&#123;&#123;$index&#125;&#125;&apos;)</div></pre></td></tr></table></figure>
+<h1 id="slide-right说明"><a href="#slide-right说明" class="headerlink" title="slide-right说明"></a>slide-right说明</h1><blockquote>
+<p>  此class来自ng-animation.styl<br>  贴出部分代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">   .slide-right</div><div class="line">       easingTimingFunction()</div><div class="line">       &amp;.ng-enter</div><div class="line">           transform(translateX(60px))</div><div class="line">           transitionDuration(250ms)</div><div class="line">           opacity 0</div><div class="line"></div><div class="line"></div><div class="line">&amp;.ng-enter-active</div><div class="line">	transform(translateX(0))</div><div class="line">	opacity 1</div><div class="line"></div><div class="line"></div><div class="line">&amp;.ng-leave</div><div class="line">	transform(translateX(0))</div><div class="line">	transitionDuration(250ms)</div><div class="line">	opacity 1</div><div class="line"></div><div class="line"></div><div class="line">&amp;.ng-leave-active</div><div class="line">	transform(translateX(60px))</div><div class="line">	opacity 0</div><div class="line"></div><div class="line"></div><div class="line">// Hide</div><div class="line">&amp;.ng-hide-add</div><div class="line">	transform(translateX(0))</div><div class="line">	transitionDuration(250ms)</div><div class="line">	opacity:1</div><div class="line"></div><div class="line">&amp;.ng-hide-add.ng-hide-add-active</div><div class="line">	transform(translateX(60px))</div><div class="line">	opacity:0</div><div class="line"></div><div class="line"></div><div class="line">// Show</div><div class="line">&amp;.ng-hide-remove</div><div class="line">	transform(translateX(60px))</div><div class="line">	transitionDuration(250ms)</div><div class="line">	display:block!important</div><div class="line">	opacity:0</div><div class="line"></div><div class="line">&amp;.ng-hide-remove.ng-hide-remove-active</div><div class="line">	transform(translateX(0))</div><div class="line">	opacity:1</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;效果演示&quot;&gt;&lt;a href=&quot;#效果演示&quot; class=&quot;headerlink&quot; title=&quot;效果演示&quot;&gt;&lt;/a&gt;效果演示&lt;/h1&gt;&lt;img src=&quot;/2018/03/05/angular实现列表逐条动画/11.gif&quot; alt=&quot;title of the picture&quot; title=&quot;title of the picture&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>网络电视.ts视频格式+ffmpeg用法</title>
     <link href="http://blook.me/2018/03/04/%E7%BD%91%E7%BB%9C%E7%94%B5%E8%A7%86-ts%E8%A7%86%E9%A2%91%E6%A0%BC%E5%BC%8F%E7%BD%91%E9%A1%B5%E6%92%AD%E6%94%BE/"/>
     <id>http://blook.me/2018/03/04/网络电视-ts视频格式网页播放/</id>
     <published>2018-03-04T09:43:41.000Z</published>
-    <updated>2018-03-04T10:20:14.230Z</updated>
+    <updated>2018-03-05T02:37:22.032Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"><a href="#把本地的文件转成可供浏览器直接播放的视频格式用以下代码" class="headerlink" title="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"></a>把本地的文件转成可供浏览器直接播放的视频格式用以下代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i 文件名 -acodec aac  -vcodec libx264 -r 23 -f mp4 导出文件名</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"><a href="#把本地的文件转成可供浏览器直接播放的视频格式用以下代码" class="headerlink" title="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"></a>把本地的文件转成可供浏览器直接播放的视频格式用以下代码</h3><h3 id="把本地的文件转成可供浏览器直接播放的视频格式用以下代码-1"><a href="#把本地的文件转成可供浏览器直接播放的视频格式用以下代码-1" class="headerlink" title="把本地的文件转成可供浏览器直接播放的视频格式用以下代码"></a>把本地的文件转成可供浏览器直接播放的视频格式用以下代码</h3><blockquote>
+<p>   把本地的文件转成可供浏览器直接播放的视频格式用以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i 文件名 -acodec aac  -vcodec libx264 -r 23 -f mp4 导出文件名</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
     
     <summary type="html">
     

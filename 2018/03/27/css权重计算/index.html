@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css权重计算 | BLOOK | GP&#39;s blog and book</title>
+
+  
+  <meta name="author" content="GP">
+  
+
+  
+  <meta name="description" content="javascript">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="css权重计算"/>
+
+  <meta property="og:site_name" content="BLOOK"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BLOOK" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">BLOOK</a>
+    </h1>
+    <p class="site-description">GP&#39;s blog and book</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/collect/#!/collect/3">Demo</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>css权重计算</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/03/27/css权重计算/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-03-27T03:28:41.000Z">
+          2018-03-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <img src="/2018/03/27/css权重计算/css1.png" alt="css" title="css">
+<a id="more"></a>
+<h3 id="选择器类型"><a href="#选择器类型" class="headerlink" title="选择器类型"></a>选择器类型</h3><p>　　1、ID　　#id<br>　　2、class　　.class<br>　　3、标签　　p<br>　　4、通用　　*<br>　　5、属性　　[type=”text”]<br>　　6、伪类　　：hover<br>　　7、伪元素　　::first-line<br>　　8、子选择器、相邻选择器</p>
+<h3 id="权重计算规则"><a href="#权重计算规则" class="headerlink" title="权重计算规则"></a>权重计算规则</h3><ol>
+<li>第一等：代表内联样式，如: style=””，权值为1000。</li>
+<li>第二等：代表ID选择器，如：#content，权值为0100。</li>
+<li>第三等：代表类，伪类和属性选择器，如.content，权值为0010。</li>
+<li>第四等：代表类型选择器和伪元素选择器，如div p，权值为0001。</li>
+<li>通配符、子选择器、相邻选择器等的。如*、&gt;、+,权值为0000。</li>
+<li>继承的样式没有权值。</li>
+</ol>
+<img src="/2018/03/27/css权重计算/css-specificity-wars.png" alt="css" title="css">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">01. *&#123;&#125;                         ====》0</div><div class="line">02. li&#123;&#125;                        ====》1(一个元素)</div><div class="line">03. li:first-line&#123;&#125;             ====》2(一个元素，一个伪元素)</div><div class="line">04. ul li &#123;&#125;                    ====》2（两个元素）</div><div class="line">05. ul ol+li&#123;&#125;                  ====》3（三个元素）</div><div class="line">06. h1+ *[rel=up] &#123;&#125;            ====》11（一个属性选择器，一个元素）</div><div class="line">07. ul ol li.red&#123;&#125;              ====》13（一个类，三个元素）</div><div class="line">08. li.red.level&#123;&#125;              ====》21（两个类，一个元素）</div><div class="line">09. style=&quot;&quot;                    ====》1000(一个行内样式)</div><div class="line">10. p &#123;&#125;                        ====》1（一个元素）</div><div class="line">11. div p &#123;&#125;                    ====》2（两个元素）</div><div class="line">12. .sith &#123;&#125;                    ====》10（一个类）</div><div class="line">13. div p.sith&#123;&#125;                ====》12（一个类，两个元素）</div><div class="line">14. #sith&#123;&#125;                     ====》100（一个ID选择器）</div><div class="line">15. body #darkside .sith p &#123;&#125;   ====》112(1+100+10+1,一个Id选择器，一个类，两个元素)</div></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <!--<div>-->
+    <!--<p class="article-more-link">-->
+      <!--<a href="/2018/03/27/css权重计算/">more</a>-->
+    <!--</p>-->
+  <!--</div>-->
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<div id="comment">
+		
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2018/03/27/css权重计算/" data-title="css权重计算" data-url="http://blook.me/2018/03/27/css权重计算/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blookme"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0]
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+
+	</div>
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 GP
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

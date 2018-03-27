@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>网络电视.ts视频格式+ffmpeg用法 | BLOOK | GP&#39;s blog and book</title>
+  <title>tree打印树状目录结构 | BLOOK | GP&#39;s blog and book</title>
 
   
   <meta name="author" content="GP">
@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="网络电视.ts视频格式+ffmpeg用法"/>
+  <meta property="og:title" content="tree打印树状目录结构"/>
 
   <meta property="og:site_name" content="BLOOK"/>
 
@@ -67,15 +67,15 @@
 
   
     
-    <h3 class="article-title"><span>网络电视.ts视频格式+ffmpeg用法</span></h3>
+    <h3 class="article-title"><span>tree打印树状目录结构</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2018/03/04/网络电视-ts视频格式网页播放/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-03-04T09:43:41.000Z">
-          2018-03-04
+      <a href="/2017/07/27/tree打印树状目录结构/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-27T03:47:12.000Z">
+          2017-07-27
         </time>
       </a>
     </span>
@@ -87,9 +87,10 @@
   <div class="article-content">
     <div class="entry">
       
-        <blockquote>
-<p>   把本地的文件转成可供浏览器直接播放的视频格式用以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i 文件名 -acodec aac  -vcodec libx264 -r 23 -f mp4 导出文件名</div></pre></td></tr></table></figure></p>
-</blockquote>
+        <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tree -I &quot;node_modules|dist|build&quot; -L 3 &gt; tree.md</div><div class="line">tree  &quot;src/&quot;   -L 3 -o  tree.md</div></pre></td></tr></table></figure>
+<img src="/2017/07/27/tree打印树状目录结构/tree.png" alt="tree打印树状目录结构" title="tree打印树状目录结构">
+<a id="more"></a>
+<h4 id="常用配置说明"><a href="#常用配置说明" class="headerlink" title="常用配置说明"></a>常用配置说明</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 屏蔽多规则文件:通过|分割，同时加上&quot;&quot;</div><div class="line">-I &quot;node_modules|dist&quot;</div><div class="line"></div><div class="line">// 只是目录</div><div class="line">-d  </div><div class="line"></div><div class="line">//第三方npm包</div><div class="line">node_modules</div><div class="line">//文件类型</div><div class="line">*.html</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -98,7 +99,7 @@
 
   <!--<div>-->
     <!--<p class="article-more-link">-->
-      <!--<a href="/2018/03/04/网络电视-ts视频格式网页播放/">more</a>-->
+      <!--<a href="/2017/07/27/tree打印树状目录结构/">more</a>-->
     <!--</p>-->
   <!--</div>-->
 
@@ -119,7 +120,7 @@
 	<div id="comment">
 		
 	<!-- 多说评论框 start -->
-	 <div class="ds-thread" data-thread-key="/2018/03/04/网络电视-ts视频格式网页播放/" data-title="网络电视.ts视频格式+ffmpeg用法" data-url="http://blook.me/2018/03/04/网络电视-ts视频格式网页播放/"></div>
+	 <div class="ds-thread" data-thread-key="/2017/07/27/tree打印树状目录结构/" data-title="tree打印树状目录结构" data-url="http://blook.me/2017/07/27/tree打印树状目录结构/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

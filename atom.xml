@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blook.me/"/>
-  <updated>2018-03-29T06:42:06.409Z</updated>
+  <updated>2018-03-29T07:00:13.206Z</updated>
   <id>http://blook.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blook.me/2018/03/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/"/>
     <id>http://blook.me/2018/03/29/计算机网络相关/</id>
     <published>2018-03-29T05:03:50.000Z</published>
-    <updated>2018-03-29T06:42:06.409Z</updated>
+    <updated>2018-03-29T07:00:13.206Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>计算机通信 是两个运行的进程之间的通信</li>
@@ -56,6 +56,7 @@
 <li>停止等待协议  </li>
 <li>超时重传</li>
 </ol>
+<h3 id="HTTPS和HTTP的区别"><a href="#HTTPS和HTTP的区别" class="headerlink" title="HTTPS和HTTP的区别"></a>HTTPS和HTTP的区别</h3><p>一、https协议需要到ca申请证书，一般免费证书很少，需要交费。<br>二、http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。<br>三、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>四、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
 ]]></content>
     
     <summary type="html">

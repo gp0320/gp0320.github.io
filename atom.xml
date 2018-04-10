@@ -135,17 +135,19 @@
     <link href="http://blook.me/2018/03/04/%E7%BD%91%E7%BB%9C%E7%94%B5%E8%A7%86-ts%E8%A7%86%E9%A2%91%E6%A0%BC%E5%BC%8F%E7%BD%91%E9%A1%B5%E6%92%AD%E6%94%BE/"/>
     <id>http://blook.me/2018/03/04/网络电视-ts视频格式网页播放/</id>
     <published>2018-03-04T09:43:41.000Z</published>
-    <updated>2018-03-05T09:42:23.501Z</updated>
+    <updated>2018-04-10T15:38:52.805Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
+    <content type="html"><![CDATA[<p>我做网络电视广告上传后台，视频格式是ts，需要在web预览。方法是由后端转成m3u8格式，返回文件路径，前端来播放。<br>safari默认支持m3u8.<br>chrome 用这个播放 <a href="http://videojs.github.io/videojs-contrib-hls/?_blank" target="_blank" rel="external">http://videojs.github.io/videojs-contrib-hls/</a><br>在html里长这样<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;</div><div class="line">    &lt;title&gt;video&lt;/title&gt;</div><div class="line"></div><div class="line">    &lt;link href=&quot;https://unpkg.com/video.js/dist/video-js.css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">    &lt;script src=&quot;https://unpkg.com/video.js/dist/video.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;video id=&quot;my_video_1&quot; class=&quot;video-js vjs-default-skin&quot; controls preload=&quot;auto&quot; width=&quot;640&quot; height=&quot;268&quot;</div><div class="line">       data-setup=&apos;&#123;&#125;&apos;&gt;</div><div class="line">    &lt;source src=&quot;https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8&quot; type=&quot;application/x-mpegURL&quot;&gt;</div><div class="line">&lt;/video&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>用node起个本地服务，然后访问就成功了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;);</div><div class="line">var app = express();</div><div class="line"></div><div class="line">app.use(express.static(__dirname ));</div><div class="line"></div><div class="line">app.listen(4004);</div></pre></td></tr></table></figure></p>
+<blockquote>
 <p>   把本地的文件转成可供浏览器直接播放的视频格式用以下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ffmpeg -i 文件名 -acodec aac  -vcodec libx264 -r 23 -f mp4 导出文件名</div></pre></td></tr></table></figure></p>
 </blockquote>
 ]]></content>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;   把本地的文件转成可供浏览器直接播放的视频格式用以下代码&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/di
+      &lt;p&gt;我做网络电视广告上传后台，视频格式是ts，需要在web预览。方法是由后端转成m3u8格式，返回文件路径，前端来播放。&lt;br&gt;safari默认支持m3u8.&lt;br&gt;chrome 用这个播放 &lt;a href=&quot;http://videojs.github.io/videojs-contrib-hls/?_blank&quot;&gt;http://videojs.github.io/videojs-contrib-hls/&lt;/a&gt;&lt;br&gt;在html里长这样&lt;br&gt;
     
     </summary>
     

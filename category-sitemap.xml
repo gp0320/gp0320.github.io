@@ -7,8 +7,15 @@
     </url>
 
     <url>
-        <loc>http://blook.me/categories/front/</loc>
-        <lastmod>2018-03-05T02:57:50.872Z</lastmod>
+        <loc>http://blook.me/categories/%E8%8B%B1%E8%AF%AD/</loc>
+        <lastmod>2018-03-29T05:05:23.873Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://blook.me/categories/osi-TCP/</loc>
+        <lastmod>2018-03-29T07:00:13.206Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

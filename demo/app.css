@@ -4800,16 +4800,35 @@ input::-webkit-inner-spin-button {
   -webkit-transform: perspective(300px) rotateY(0deg);
   opacity: 1;
 }
-.menu {
-  padding: 50px;
-  text-align: center;
+.introduce .title {
+  font-size: 18px;
+  height: 40px;
+  line-height: 1em;
 }
-.menu h1 {
-  font-size: 30px;
-  font-weight: bold;
+.introduce ul li {
+  height: 30px;
+  line-height: 1em;
 }
-.menu a {
+.active {
+  color: #1e7fb7;
+}
+#menu {
+  border: 1px dashed #7a7a7a;
+  padding: 20px;
+  margin: 20px;
+}
+#menu a {
   font-size: 25px;
+}
+#menu li {
+  display: inline-block;
+  padding: 0 10px;
+}
+#menu li + li {
+  border-left: 1px solid #7a7a7a;
+}
+#content {
+  padding: 10px;
 }
  {
   *zoom: 1;

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>yarn学习 | BLOOK | GP&#39;s blog and book</title>
+
+  
+  <meta name="author" content="GP">
+  
+
+  
+  <meta name="description" content="javascript">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="yarn学习"/>
+
+  <meta property="og:site_name" content="BLOOK"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BLOOK" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">BLOOK</a>
+    </h1>
+    <p class="site-description">GP&#39;s blog and book</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/demo/#!/multiselect">Demo</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>yarn学习</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/05/10/yarn学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-05-10T11:10:27.000Z">
+          2017-05-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn init</div></pre></td></tr></table></figure>
+<p>当然可以加参数 –yes/-y 来自动回答所有的问题(yes),便捷的生成一个package.json</p>
+<p>全局安装 yarn global add bagname<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* yarn add --dev/-D 添加到devDependencies</div><div class="line">* yarn add --peer/-P 添加到peerDependencies</div><div class="line">* yarn add --optional/-O 添加到optionalDependencies</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. yarn bin将打印yarn将你的包里可执行文件安装到的目录。可以通过yarn bin 可执行脚本。</div><div class="line">2. yarn cache ls (yarn 保存每个包到你的文件系统上用户目录里一个全局缓存里面。yarn cache ls会列出每个缓存了的包)</div><div class="line">3. yarn cache dir(打印当前的yarn全局缓存在哪里)</div><div class="line">4. yarn cache clean(运行这个命令会清除本地缓存，下次运行 yarn 或 yarn install 将会重新占用缓存。)</div><div class="line">5. 设置yarn缓存路径（设置cache-folder来配置缓存目录。）</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p>yarn add <package...> [–exact/-E]</package...></p>
+</blockquote>
+<p>用 –exact 或者 -E 会安装包的精确版本。 默认是安装包的主要版本里的最新版本。 比如说， yarn add foo@1.2.3 会接受 1.9.1 版，但是 yarn add foo@1.2.3 –exact 只会接受 1.2.3 版。</p>
+<blockquote>
+<p>yarn add <package...> [–tilde/-T]</package...></p>
+</blockquote>
+<p>用 –tilde 或者 -T 来安装包的次要版本里的最新版。 默认是安装包的主要版本里的最新版本。 比如说，yarn add foo@1.2.3 –tilde 会接受 1.2.9，但不接受 1.3.0。</p>
+<blockquote>
+<p>删除依赖</p>
+</blockquote>
+<p>命令yarn remove [package] 删除某个依赖，并自动更新package.json和yarn.lock文件</p>
+<blockquote>
+<p>更新依赖</p>
+</blockquote>
+<p>命令yarn upgrade [package]@[version/tag]<br>更新某个依赖的版本，并自动更新package.json和yarn.lock文件</p>
+<h2 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h2><p>1、离线工作</p>
+<ol>
+<li>从多个注册表安装<br>从远程 gzip 压缩文件安装包<br>yarn add <a href="https://thatproject.code/package.tgz" target="_blank" rel="external">https://thatproject.code/package.tgz</a></li>
+</ol>
+<p>从你的本地文件系统安装包，如下:<br>yarn add file:/path/to/local/folder</p>
+<p>从远程 git 仓库安装包，如下:<br>yarn add <git remote-url=""></git></p>
+<ol>
+<li>快速获取安装包<br>在全局缓存目录查看是否下载过这些包。如果没有，Yarn 会获取原始包，并将其放入全局缓存，以保证可以离线工作和无需重复安装。4. 4、自动锁定安装包版本、<br>yarn.lock 锁定了安装包的精确版本以及所有依赖项。有了这个文件，你可以确定项目团队的每个成员都安装了精确的软件包版本，部署可以轻松地重现，且没有意外的 bug。</li>
+</ol>
+<p>6、扁平模式<br>对于多个包依赖同一个子包的情况，yarn会尽量提取为同一个包，防止出现多处副本，浪费空间。比如1.2中，yarn会为babel-generator和babel-helper-define-map 创建同一个lodash子依赖，这样就节约一份的空间。</p>
+
+      
+    </div>
+
+  </div>
+
+  <!--<div>-->
+    <!--<p class="article-more-link">-->
+      <!--<a href="/2017/05/10/yarn学习/">more</a>-->
+    <!--</p>-->
+  <!--</div>-->
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<div id="comment">
+		
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2017/05/10/yarn学习/" data-title="yarn学习" data-url="http://blook.me/2017/05/10/yarn学习/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blookme"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0]
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+
+	</div>
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 GP
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

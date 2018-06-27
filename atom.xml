@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blook.me/"/>
-  <updated>2018-04-18T07:41:35.649Z</updated>
+  <updated>2018-06-27T12:49:37.009Z</updated>
   <id>http://blook.me/</id>
   
   <author>
@@ -14,6 +14,111 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NVM的安装和命令</title>
+    <link href="http://blook.me/2018/06/10/NVM%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blook.me/2018/06/10/NVM的安装和命令/</id>
+    <published>2018-06-10T11:10:27.000Z</published>
+    <updated>2018-06-27T12:49:37.009Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="mac下的安装"><a href="#mac下的安装" class="headerlink" title="mac下的安装"></a>mac下的安装</h2><p>mac下面的安装，其实就可以按照linux的安装就可以了！安装的命令我们可以在nvm的github的资源上面得到安装方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>在终端中执行上面的命令，安装完成以后，提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export NVM_DIR=&quot;$HOME/.nvm&quot;</div><div class="line">[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; \. &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</div><div class="line">[ -s &quot;$NVM_DIR/bash_completion&quot; ] &amp;&amp; \. &quot;$NVM_DIR/bash_completion&quot;  # This loads nvm bash_completion</div></pre></td></tr></table></figure></p>
+<p>切换到$HOME下面(快速的切换：直接输入cd 回车)，查看是否有.bash_profile,如果没有的话就创建！<br>创建.bash_profile命令，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch   .bash_profile</div></pre></td></tr></table></figure>
+<p>打开<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open   .bash_profile</div></pre></td></tr></table></figure></p>
+<p>如果在linux中最好用vi打开你需要的文件，这时候把提示的内容copy进去就可以了！<br>使用命令查看安装的版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nvm -version</div></pre></td></tr></table></figure></p>
+<p>这样我们就把windows端和mac端的nvm安装完成了！<br>mac下的nvm经常使用命令的总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">nvm --help                          显示所有信息</div><div class="line">nvm --version                       显示当前安装的nvm版本</div><div class="line">nvm install [-s] &lt;version&gt;          安装指定的版本，如果不存在.nvmrc,就从指定的资源下载安装</div><div class="line">nvm install [-s] &lt;version&gt;  -latest-npm 安装指定的版本，平且下载最新的npm</div><div class="line">nvm uninstall &lt;version&gt;             卸载指定的版本</div><div class="line">nvm use [--silent] &lt;version&gt;        使用已经安装的版本  切换版本</div><div class="line">nvm current                         查看当前使用的node版本</div><div class="line">nvm ls                              查看已经安装的版本</div><div class="line">nvm ls  &lt;version&gt;                   查看指定版本</div><div class="line">nvm ls-remote                       显示远程所有可以安装的nodejs版本</div><div class="line">nvm ls-remote --lts                 查看长期支持的版本</div><div class="line">nvm install-latest-npm              安装罪行的npm</div><div class="line">nvm reinstall-packages &lt;version&gt;    重新安装指定的版本</div><div class="line">nvm cache dir                       显示nvm的cache</div><div class="line">nvm cache clear                     清空nvm的cache</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>nodejs具体安装过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nvm install 6.9.1</div></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;mac下的安装&quot;&gt;&lt;a href=&quot;#mac下的安装&quot; class=&quot;headerlink&quot; title=&quot;mac下的安装&quot;&gt;&lt;/a&gt;mac下的安装&lt;/h2&gt;&lt;p&gt;mac下面的安装，其实就可以按照linux的安装就可以了！安装的命令我们可以在nvm的github的资源上面得到安装方法：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>module require源码解析</title>
+    <link href="http://blook.me/2018/05/01/module/"/>
+    <id>http://blook.me/2018/05/01/module/</id>
+    <published>2018-05-01T08:26:24.000Z</published>
+    <updated>2018-06-27T12:33:19.146Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="require-的用法"><a href="#require-的用法" class="headerlink" title="require 的用法"></a>require 的用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> require()：加载一个外部模块 </div><div class="line">· require.resolve()：解析一个模块名到它的绝对路径 </div><div class="line">· require.main：主模块 </div><div class="line">· require.cache：所有缓存好的模块</div><div class="line">· ·require.extensions：根据其扩展名，对于每个有效的文件类型可使用的编制方法</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="require-数据结构"><a href="#require-数据结构" class="headerlink" title="require 数据结构"></a>require 数据结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//require</div><div class="line">&#123; [Function: require]</div><div class="line">  resolve: [Function: resolve],</div><div class="line">  main: </div><div class="line">   Module &#123;</div><div class="line">     id: &apos;.&apos;,</div><div class="line">     exports: &#123;&#125;,</div><div class="line">     parent: null,</div><div class="line">     filename: &apos;/Users/gaopo/study/node/c.js&apos;,</div><div class="line">     loaded: false,</div><div class="line">     children: [],</div><div class="line">     paths: </div><div class="line">      [ &apos;/Users/gaopo/study/node/node_modules&apos;,</div><div class="line">        &apos;/Users/gaopo/study/node_modules&apos;,</div><div class="line">        &apos;/Users/gaopo/node_modules&apos;,</div><div class="line">        &apos;/Users/node_modules&apos;,</div><div class="line">        &apos;/node_modules&apos; ] &#125;,</div><div class="line">  extensions: &#123; &apos;.js&apos;: [Function], &apos;.json&apos;: [Function], &apos;.node&apos;: [Function] &#125;,</div><div class="line">  cache: </div><div class="line">   &#123; &apos;/Users/gaopo/study/node/c.js&apos;: </div><div class="line">      Module &#123;</div><div class="line">        id: &apos;.&apos;,</div><div class="line">        exports: &#123;&#125;,</div><div class="line">        parent: null,</div><div class="line">        filename: &apos;/Users/gaopo/study/node/c.js&apos;,</div><div class="line">        loaded: false,</div><div class="line">        children: [],</div><div class="line">        paths: [Object] &#125; &#125; &#125;</div></pre></td></tr></table></figure>
+<h2 id="module-数据结构"><a href="#module-数据结构" class="headerlink" title="module 数据结构"></a>module 数据结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Module &#123;</div><div class="line">  id: &apos;.&apos;,</div><div class="line">  exports: &#123;&#125;,</div><div class="line">  parent: null,</div><div class="line">  filename: &apos;/Users/gaopo/study/node/c.js&apos;,</div><div class="line">  loaded: false,</div><div class="line">  children: [],</div><div class="line">  paths: </div><div class="line">   [ &apos;/Users/gaopo/study/node/node_modules&apos;,</div><div class="line">     &apos;/Users/gaopo/study/node_modules&apos;,</div><div class="line">     &apos;/Users/gaopo/node_modules&apos;,</div><div class="line">     &apos;/Users/node_modules&apos;,</div><div class="line">     &apos;/node_modules&apos; ] &#125;</div></pre></td></tr></table></figure>
+<h2 id="require-的顺序"><a href="#require-的顺序" class="headerlink" title="require 的顺序"></a>require 的顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">X/package.json（main字段）</div><div class="line">X/index.js</div><div class="line">X/index.json</div><div class="line">X/index.node</div></pre></td></tr></table></figure>
+<h2 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h2><p>源码仓库：<br><a href="https://github.com/nodejs/node-v0.x-archive/blob/master/lib/module.js" target="_blank" rel="external">https://github.com/nodejs/node-v0.x-archive/blob/master/lib/module.js</a></p>
+<blockquote>
+<p>   1、以模块的绝对路径（filename）作为模块的识别符。</p>
+<p>   2、然后，如果模块已经在缓存中，就从缓存取出；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var cachedModule = Module._cache[filename];</div><div class="line">if (cachedModule) &#123;</div><div class="line">  return cachedModule.exports;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>   3、如果不在缓存中，就加载模块new Module()。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var module = new Module(filename, parent);</div><div class="line">Module._cache[filename] = module;</div></pre></td></tr></table></figure></p>
+<p>   4、执行 module.load(filename);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">try &#123;</div><div class="line">  module.load(filename);</div><div class="line">  hadException = false;</div><div class="line">&#125; finally &#123;</div><div class="line">  if (hadException) &#123;</div><div class="line">    delete Module._cache[filename];</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>   5、module.load主要执行Module._extensions [extension] (this, filename)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Module.prototype.load = function(filename) &#123;</div><div class="line">  debug(&apos;load &apos; + JSON.stringify(filename) +</div><div class="line">        &apos; for module &apos; + JSON.stringify(this.id));</div><div class="line"></div><div class="line">  assert(!this.loaded);</div><div class="line">  this.filename = filename;</div><div class="line">  this.paths = Module._nodeModulePaths(path.dirname(filename));</div><div class="line"></div><div class="line">  var extension = path.extname(filename) || &apos;.js&apos;;</div><div class="line">  if (!Module._extensions[extension]) extension = &apos;.js&apos;;</div><div class="line">  Module._extensions[extension](this, filename);</div><div class="line">  this.loaded = true;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>   6、require 返回的是 module.exports<br>module.exports 默认是空对象<br>是在 Module._extensions 这个函数里面扩展的<br>分三种情况 js  json node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// Native extension for .js</div><div class="line">Module._extensions[&apos;.js&apos;] = function(module, filename) &#123;</div><div class="line">  var content = fs.readFileSync(filename, &apos;utf8&apos;);</div><div class="line">  module._compile(stripBOM(content), filename);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line">// Native extension for .json</div><div class="line">Module._extensions[&apos;.json&apos;] = function(module, filename) &#123;</div><div class="line">  var content = fs.readFileSync(filename, &apos;utf8&apos;);</div><div class="line">  try &#123;</div><div class="line">  // 以json为例 `module.exports =` 赋值步骤</div><div class="line">    module.exports = JSON.parse(stripBOM(content));</div><div class="line">  &#125; catch (err) &#123;</div><div class="line">    err.message = filename + &apos;: &apos; + err.message;</div><div class="line">    throw err;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line">//Native extension for .node</div><div class="line">Module._extensions[&apos;.node&apos;] = process.dlopen;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>end 最后返回的是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return module.exports;</div></pre></td></tr></table></figure></p>
+<h2 id="小测"><a href="#小测" class="headerlink" title="小测"></a>小测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// a.js</div><div class="line">console.log(&apos;a&apos;)</div><div class="line">var c = require(&apos;./c.js&apos;);</div><div class="line">c.a = 8</div><div class="line">module.exports= c</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// b.js</div><div class="line">var c = require(&apos;./c.js&apos;);</div><div class="line">var a = require(&apos;./a.js&apos;);</div><div class="line">console.log(c)</div><div class="line">console.log(c === a)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// c.js</div><div class="line">let c = &#123;a:1&#125;</div><div class="line">module.exports= c</div><div class="line">console.log(&apos;被require2次但是只log一次&apos;);</div></pre></td></tr></table></figure>
+<p>运行 node b.js 输出如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">c.js被require2次但是只log一次</div><div class="line">a</div><div class="line">&#123; a: 8 &#125;</div><div class="line">true</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>   ps</p>
+<ul>
+<li>该Module._compile方法是同步执行的，所以对Module._load的调用只能等到这段代码运行结束.<ul>
+<li>this.loaded = true; 在 Module.prototype.load 方法最后一行</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;require-的用法&quot;&gt;&lt;a href=&quot;#require-的用法&quot; class=&quot;headerlink&quot; title=&quot;require 的用法&quot;&gt;&lt;/a&gt;require 的用法&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt; require()：加载一个外部模块 &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;· require.resolve()：解析一个模块名到它的绝对路径 &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;· require.main：主模块 &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;· require.cache：所有缓存好的模块&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;· ·require.extensions：根据其扩展名，对于每个有效的文件类型可使用的编制方法&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>nginx学习笔记</title>
+    <link href="http://blook.me/2018/04/02/nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blook.me/2018/04/02/nginx学习笔记/</id>
+    <published>2018-04-02T11:55:27.000Z</published>
+    <updated>2018-06-27T12:41:19.898Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">########### 每个指令必须有分号结束。#################</div><div class="line">#user administrator administrators;  #配置用户或者组，默认为nobody nobody。</div><div class="line">#worker_processes 2;  #允许生成的进程数，默认为1</div><div class="line">#pid /nginx/pid/nginx.pid;   #指定nginx进程运行文件存放地址</div><div class="line">error_log log/error.log debug;  #制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg</div><div class="line">events &#123;</div><div class="line">    accept_mutex on;   #设置网路连接序列化，防止惊群现象发生，默认为on</div><div class="line">    multi_accept on;  #设置一个进程是否同时接受多个网络连接，默认为off</div><div class="line">    #use epoll;      #事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport</div><div class="line">    worker_connections  1024;    #最大连接数，默认为512</div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    include       mime.types;   #文件扩展名与文件类型映射表</div><div class="line">    default_type  application/octet-stream; #默认文件类型，默认为text/plain</div><div class="line">    #access_log off; #取消服务日志    </div><div class="line">    log_format myFormat &apos;$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for&apos;; #自定义格式</div><div class="line">    access_log log/access.log myFormat;  #combined为日志格式的默认值</div><div class="line">    sendfile on;   #允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。</div><div class="line">    sendfile_max_chunk 100k;  #每个进程每次调用传输数量不能大于设定的值，默认为0，即不设上限。</div><div class="line">    keepalive_timeout 65;  #连接超时时间，默认为75s，可以在http，server，location块。</div><div class="line"></div><div class="line">    upstream mysvr &#123;   </div><div class="line">      server 127.0.0.1:7878;</div><div class="line">      server 192.168.10.121:3333 backup;  #热备</div><div class="line">    &#125;</div><div class="line">    error_page 404 https://www.baidu.com; #错误页</div><div class="line">    server &#123;</div><div class="line">        keepalive_requests 120; #单连接请求上限次数。</div><div class="line">        listen       4545;   #监听端口</div><div class="line">        server_name  127.0.0.1;   #监听地址       </div><div class="line">        location  ~*^.+$ &#123;       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。</div><div class="line">           #root path;  #根目录</div><div class="line">           #index vv.txt;  #设置默认页</div><div class="line">           proxy_pass  http://mysvr;  #请求转向mysvr 定义的服务器列表</div><div class="line">           deny 127.0.0.1;  #拒绝的ip</div><div class="line">           allow 172.18.5.54; #允许的ip           </div><div class="line">        &#125; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p>   上面是nginx的基本配置，需要注意的有以下几点：</p>
+</blockquote>
+<p>1.$remote_addr 与$http_x_forwarded_for 用以记录客户端的ip地址；<br>2.$remote_user ：用来记录客户端用户名称；<br>3.$time_local ： 用来记录访问时间与时区；<br>4.$request ： 用来记录请求的url与http协议；</p>
+<p>5.$status ： 用来记录请求状态；成功是200，</p>
+<p>6、$body_bytes_s ent ：记录发送给客户端文件主体内容大小；</p>
+<p>7、$http_referer ：用来记录从那个页面链接访问过来的；</p>
+<p>8.$http_user_agent ：记录客户端浏览器的相关信息；</p>
+<p>2、惊群现象：一个网路连接到来，多个睡眠的进程被同事叫醒，但只有一个进程能获得链接，这样会影响系统性能。</p>
+<p>3、每个指令必须有分号结束。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;########### 每个指令必须有分号结束。#################&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#user administrator administrators;  #配置用户或者组，默认为nobody nobody。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#worker_processes 2;  #允许生成的进程数，默认为1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;#pid /nginx/pid/nginx.pid;   #指定nginx进程运行文件存放地址&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;error_log log/error.log debug;  #制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;events &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    accept_mutex on;   #设置网路连接序列化，防止惊群现象发生，默认为on&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    multi_accept on;  #设置一个进程是否同时接受多个网络连接，默认为off&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    #use epoll;      #事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    worker_connections  1024;    #最大连接数，默认为512&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;http &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    include       mime.types;   #文件扩展名与文件类型映射表&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    default_type  application/octet-stream; #默认文件类型，默认为text/plain&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    #access_log off; #取消服务日志    &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    log_format myFormat &amp;apos;$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for&amp;apos;; #自定义格式&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    access_log log/access.log myFormat;  #combined为日志格式的默认值&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sendfile on;   #允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sendfile_max_chunk 100k;  #每个进程每次调用传输数量不能大于设定的值，默认为0，即不设上限。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    keepalive_timeout 65;  #连接超时时间，默认为75s，可以在http，server，location块。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    upstream mysvr &amp;#123;   &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      server 127.0.0.1:7878;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      server 192.168.10.121:3333 backup;  #热备&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    error_page 404 https://www.baidu.com; #错误页&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    server &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        keepalive_requests 120; #单连接请求上限次数。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        listen       4545;   #监听端口&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        server_name  127.0.0.1;   #监听地址       &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        location  ~*^.+$ &amp;#123;       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;           #root path;  #根目录&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;           #index vv.txt;  #设置默认页&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;           proxy_pass  http://mysvr;  #请求转向mysvr 定义的服务器列表&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;           deny 127.0.0.1;  #拒绝的ip&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;           allow 172.18.5.54; #允许的ip           &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>计算机网络相关</title>
@@ -383,6 +488,58 @@
 &lt;li&gt;–noattrcomma - 属性之间不要逗号分隔&lt;/li&gt;
 &lt;li&gt;–noemptypipe - omit lines with only pipe (‘|’) printable character 去掉|&lt;/li&gt;
 &lt;/ul&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>yarn学习</title>
+    <link href="http://blook.me/2017/05/10/yarn%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://blook.me/2017/05/10/yarn学习/</id>
+    <published>2017-05-10T11:10:27.000Z</published>
+    <updated>2018-06-27T12:41:19.895Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn init</div></pre></td></tr></table></figure>
+<p>当然可以加参数 –yes/-y 来自动回答所有的问题(yes),便捷的生成一个package.json</p>
+<p>全局安装 yarn global add bagname<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">* yarn add --dev/-D 添加到devDependencies</div><div class="line">* yarn add --peer/-P 添加到peerDependencies</div><div class="line">* yarn add --optional/-O 添加到optionalDependencies</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. yarn bin将打印yarn将你的包里可执行文件安装到的目录。可以通过yarn bin 可执行脚本。</div><div class="line">2. yarn cache ls (yarn 保存每个包到你的文件系统上用户目录里一个全局缓存里面。yarn cache ls会列出每个缓存了的包)</div><div class="line">3. yarn cache dir(打印当前的yarn全局缓存在哪里)</div><div class="line">4. yarn cache clean(运行这个命令会清除本地缓存，下次运行 yarn 或 yarn install 将会重新占用缓存。)</div><div class="line">5. 设置yarn缓存路径（设置cache-folder来配置缓存目录。）</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<p>yarn add <package...> [–exact/-E]</package...></p>
+</blockquote>
+<p>用 –exact 或者 -E 会安装包的精确版本。 默认是安装包的主要版本里的最新版本。 比如说， yarn add foo@1.2.3 会接受 1.9.1 版，但是 yarn add foo@1.2.3 –exact 只会接受 1.2.3 版。</p>
+<blockquote>
+<p>yarn add <package...> [–tilde/-T]</package...></p>
+</blockquote>
+<p>用 –tilde 或者 -T 来安装包的次要版本里的最新版。 默认是安装包的主要版本里的最新版本。 比如说，yarn add foo@1.2.3 –tilde 会接受 1.2.9，但不接受 1.3.0。</p>
+<blockquote>
+<p>删除依赖</p>
+</blockquote>
+<p>命令yarn remove [package] 删除某个依赖，并自动更新package.json和yarn.lock文件</p>
+<blockquote>
+<p>更新依赖</p>
+</blockquote>
+<p>命令yarn upgrade [package]@[version/tag]<br>更新某个依赖的版本，并自动更新package.json和yarn.lock文件</p>
+<h2 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h2><p>1、离线工作</p>
+<ol>
+<li>从多个注册表安装<br>从远程 gzip 压缩文件安装包<br>yarn add <a href="https://thatproject.code/package.tgz" target="_blank" rel="external">https://thatproject.code/package.tgz</a></li>
+</ol>
+<p>从你的本地文件系统安装包，如下:<br>yarn add file:/path/to/local/folder</p>
+<p>从远程 git 仓库安装包，如下:<br>yarn add <git remote-url=""></git></p>
+<ol>
+<li>快速获取安装包<br>在全局缓存目录查看是否下载过这些包。如果没有，Yarn 会获取原始包，并将其放入全局缓存，以保证可以离线工作和无需重复安装。4. 4、自动锁定安装包版本、<br>yarn.lock 锁定了安装包的精确版本以及所有依赖项。有了这个文件，你可以确定项目团队的每个成员都安装了精确的软件包版本，部署可以轻松地重现，且没有意外的 bug。</li>
+</ol>
+<p>6、扁平模式<br>对于多个包依赖同一个子包的情况，yarn会尽量提取为同一个包，防止出现多处副本，浪费空间。比如1.2中，yarn会为babel-generator和babel-helper-define-map 创建同一个lodash子依赖，这样就节约一份的空间。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;yarn init&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;当然可以加参数 –yes/-y 来自动回答所有的问题(yes),便捷的生成一个package.json&lt;/p&gt;
+&lt;p&gt;全局安装 yarn global add bagname&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;* yarn add --dev/-D 添加到devDependencies&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;* yarn add --peer/-P 添加到peerDependencies&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;* yarn add --optional/-O 添加到optionalDependencies&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1. yarn bin将打印yarn将你的包里可执行文件安装到的目录。可以通过yarn bin 可执行脚本。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2. yarn cache ls (yarn 保存每个包到你的文件系统上用户目录里一个全局缓存里面。yarn cache ls会列出每个缓存了的包)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3. yarn cache dir(打印当前的yarn全局缓存在哪里)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4. yarn cache clean(运行这个命令会清除本地缓存，下次运行 yarn 或 yarn install 将会重新占用缓存。)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5. 设置yarn缓存路径（设置cache-folder来配置缓存目录。）&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

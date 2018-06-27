@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>module require源码解析 | BLOOK | GP&#39;s blog and book</title>
+
+  
+  <meta name="author" content="GP">
+  
+
+  
+  <meta name="description" content="javascript">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="module require源码解析"/>
+
+  <meta property="og:site_name" content="BLOOK"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="BLOOK" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">BLOOK</a>
+    </h1>
+    <p class="site-description">GP&#39;s blog and book</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+        <li><a href="/demo/#!/multiselect">Demo</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>module require源码解析</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/05/01/module/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-05-01T08:26:24.000Z">
+          2018-05-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="require-的用法"><a href="#require-的用法" class="headerlink" title="require 的用法"></a>require 的用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> require()：加载一个外部模块 </div><div class="line">· require.resolve()：解析一个模块名到它的绝对路径 </div><div class="line">· require.main：主模块 </div><div class="line">· require.cache：所有缓存好的模块</div><div class="line">· ·require.extensions：根据其扩展名，对于每个有效的文件类型可使用的编制方法</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="require-数据结构"><a href="#require-数据结构" class="headerlink" title="require 数据结构"></a>require 数据结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//require</div><div class="line">&#123; [Function: require]</div><div class="line">  resolve: [Function: resolve],</div><div class="line">  main: </div><div class="line">   Module &#123;</div><div class="line">     id: &apos;.&apos;,</div><div class="line">     exports: &#123;&#125;,</div><div class="line">     parent: null,</div><div class="line">     filename: &apos;/Users/gaopo/study/node/c.js&apos;,</div><div class="line">     loaded: false,</div><div class="line">     children: [],</div><div class="line">     paths: </div><div class="line">      [ &apos;/Users/gaopo/study/node/node_modules&apos;,</div><div class="line">        &apos;/Users/gaopo/study/node_modules&apos;,</div><div class="line">        &apos;/Users/gaopo/node_modules&apos;,</div><div class="line">        &apos;/Users/node_modules&apos;,</div><div class="line">        &apos;/node_modules&apos; ] &#125;,</div><div class="line">  extensions: &#123; &apos;.js&apos;: [Function], &apos;.json&apos;: [Function], &apos;.node&apos;: [Function] &#125;,</div><div class="line">  cache: </div><div class="line">   &#123; &apos;/Users/gaopo/study/node/c.js&apos;: </div><div class="line">      Module &#123;</div><div class="line">        id: &apos;.&apos;,</div><div class="line">        exports: &#123;&#125;,</div><div class="line">        parent: null,</div><div class="line">        filename: &apos;/Users/gaopo/study/node/c.js&apos;,</div><div class="line">        loaded: false,</div><div class="line">        children: [],</div><div class="line">        paths: [Object] &#125; &#125; &#125;</div></pre></td></tr></table></figure>
+<h2 id="module-数据结构"><a href="#module-数据结构" class="headerlink" title="module 数据结构"></a>module 数据结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Module &#123;</div><div class="line">  id: &apos;.&apos;,</div><div class="line">  exports: &#123;&#125;,</div><div class="line">  parent: null,</div><div class="line">  filename: &apos;/Users/gaopo/study/node/c.js&apos;,</div><div class="line">  loaded: false,</div><div class="line">  children: [],</div><div class="line">  paths: </div><div class="line">   [ &apos;/Users/gaopo/study/node/node_modules&apos;,</div><div class="line">     &apos;/Users/gaopo/study/node_modules&apos;,</div><div class="line">     &apos;/Users/gaopo/node_modules&apos;,</div><div class="line">     &apos;/Users/node_modules&apos;,</div><div class="line">     &apos;/node_modules&apos; ] &#125;</div></pre></td></tr></table></figure>
+<h2 id="require-的顺序"><a href="#require-的顺序" class="headerlink" title="require 的顺序"></a>require 的顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">X/package.json（main字段）</div><div class="line">X/index.js</div><div class="line">X/index.json</div><div class="line">X/index.node</div></pre></td></tr></table></figure>
+<h2 id="源码解析"><a href="#源码解析" class="headerlink" title="源码解析"></a>源码解析</h2><p>源码仓库：<br><a href="https://github.com/nodejs/node-v0.x-archive/blob/master/lib/module.js" target="_blank" rel="external">https://github.com/nodejs/node-v0.x-archive/blob/master/lib/module.js</a></p>
+<blockquote>
+<p>   1、以模块的绝对路径（filename）作为模块的识别符。</p>
+<p>   2、然后，如果模块已经在缓存中，就从缓存取出；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var cachedModule = Module._cache[filename];</div><div class="line">if (cachedModule) &#123;</div><div class="line">  return cachedModule.exports;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>   3、如果不在缓存中，就加载模块new Module()。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var module = new Module(filename, parent);</div><div class="line">Module._cache[filename] = module;</div></pre></td></tr></table></figure></p>
+<p>   4、执行 module.load(filename);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">try &#123;</div><div class="line">  module.load(filename);</div><div class="line">  hadException = false;</div><div class="line">&#125; finally &#123;</div><div class="line">  if (hadException) &#123;</div><div class="line">    delete Module._cache[filename];</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>   5、module.load主要执行Module._extensions [extension] (this, filename)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Module.prototype.load = function(filename) &#123;</div><div class="line">  debug(&apos;load &apos; + JSON.stringify(filename) +</div><div class="line">        &apos; for module &apos; + JSON.stringify(this.id));</div><div class="line"></div><div class="line">  assert(!this.loaded);</div><div class="line">  this.filename = filename;</div><div class="line">  this.paths = Module._nodeModulePaths(path.dirname(filename));</div><div class="line"></div><div class="line">  var extension = path.extname(filename) || &apos;.js&apos;;</div><div class="line">  if (!Module._extensions[extension]) extension = &apos;.js&apos;;</div><div class="line">  Module._extensions[extension](this, filename);</div><div class="line">  this.loaded = true;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>   6、require 返回的是 module.exports<br>module.exports 默认是空对象<br>是在 Module._extensions 这个函数里面扩展的<br>分三种情况 js  json node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">// Native extension for .js</div><div class="line">Module._extensions[&apos;.js&apos;] = function(module, filename) &#123;</div><div class="line">  var content = fs.readFileSync(filename, &apos;utf8&apos;);</div><div class="line">  module._compile(stripBOM(content), filename);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line">// Native extension for .json</div><div class="line">Module._extensions[&apos;.json&apos;] = function(module, filename) &#123;</div><div class="line">  var content = fs.readFileSync(filename, &apos;utf8&apos;);</div><div class="line">  try &#123;</div><div class="line">  // 以json为例 `module.exports =` 赋值步骤</div><div class="line">    module.exports = JSON.parse(stripBOM(content));</div><div class="line">  &#125; catch (err) &#123;</div><div class="line">    err.message = filename + &apos;: &apos; + err.message;</div><div class="line">    throw err;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line">//Native extension for .node</div><div class="line">Module._extensions[&apos;.node&apos;] = process.dlopen;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>end 最后返回的是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return module.exports;</div></pre></td></tr></table></figure></p>
+<h2 id="小测"><a href="#小测" class="headerlink" title="小测"></a>小测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// a.js</div><div class="line">console.log(&apos;a&apos;)</div><div class="line">var c = require(&apos;./c.js&apos;);</div><div class="line">c.a = 8</div><div class="line">module.exports= c</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// b.js</div><div class="line">var c = require(&apos;./c.js&apos;);</div><div class="line">var a = require(&apos;./a.js&apos;);</div><div class="line">console.log(c)</div><div class="line">console.log(c === a)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// c.js</div><div class="line">let c = &#123;a:1&#125;</div><div class="line">module.exports= c</div><div class="line">console.log(&apos;被require2次但是只log一次&apos;);</div></pre></td></tr></table></figure>
+<p>运行 node b.js 输出如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">c.js被require2次但是只log一次</div><div class="line">a</div><div class="line">&#123; a: 8 &#125;</div><div class="line">true</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>   ps</p>
+<ul>
+<li>该Module._compile方法是同步执行的，所以对Module._load的调用只能等到这段代码运行结束.<ul>
+<li>this.loaded = true; 在 Module.prototype.load 方法最后一行</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <!--<div>-->
+    <!--<p class="article-more-link">-->
+      <!--<a href="/2018/05/01/module/">more</a>-->
+    <!--</p>-->
+  <!--</div>-->
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<div id="comment">
+		
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2018/05/01/module/" data-title="module require源码解析" data-url="http://blook.me/2018/05/01/module/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"blookme"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0]
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+
+	</div>
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2018 GP
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blook.me/"/>
-  <updated>2018-11-07T08:32:47.605Z</updated>
+  <updated>2018-11-07T08:41:30.234Z</updated>
   <id>http://blook.me/</id>
   
   <author>
@@ -20,19 +20,15 @@
     <link href="http://blook.me/2018/11/07/link%E4%B9%8Bpreload/"/>
     <id>http://blook.me/2018/11/07/link之preload/</id>
     <published>2018-11-07T11:20:27.000Z</published>
-    <updated>2018-11-07T08:32:47.605Z</updated>
+    <updated>2018-11-07T08:41:30.234Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">只是预加载，并不运行。</div><div class="line"></div><div class="line">用下面两种方法即可加载完运行</div><div class="line"></div><div class="line">// 预加载Css</div><div class="line">&lt;link rel=&quot;preload&quot; as=&quot;style&quot; href=&quot;async_style.css&quot; onload=&quot;this.rel=&apos;stylesheet&apos;&quot;&gt;</div><div class="line"></div><div class="line">// 预加载js</div><div class="line">  &lt;link rel=&quot;preload&quot; as=&quot;script&quot; href=&quot;async_script.js&quot;</div><div class="line">          onload=&quot;var script = document.createElement(&apos;script&apos;);</div><div class="line">        script.src = this.href;</div><div class="line">        document.body.appendChild(script);&quot;&gt;</div></pre></td></tr></table></figure>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content" target="_blank" rel="external">参考MDN</a><br><a href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/" target="_blank" rel="external">参考</a><br><a href="https://master-origin-loadcss.fgview.com/test/preload.html" target="_blank" rel="external">DEMO</a></p>
-<p><link rel="prefetch"> 已经被许多浏览器支持了相当长的时间，但它是意图预获取一些资源，<br>以备下一个导航/页面使用（比如，当你去到下一个页面时）。<br>这很好，但对当前的页面并没有什么助益。<br>此外，浏览器会给使用prefetch的资源一个相对较低的优先级——与使用preload的资源相比。毕竟，当前的页面比下一个页面相对更加重要。查看Link prefetching FAQ可以了解更多细节。<br><a id="more"></a></p>
-<p>&gt;</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content" target="_blank" rel="external">参考MDN</a><br><a href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/" target="_blank" rel="external">参考</a><br><a href="https://master-origin-loadcss.fgview.com/test/preload.html" target="_blank" rel="external">DEMO</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;prefetch&quot;&gt; 已经被许多浏览器支持了相当长的时间，但它是意图预获取一些资源，</div><div class="line">以备下一个导航/页面使用（比如，当你去到下一个页面时）。</div><div class="line">这很好，但对当前的页面并没有什么助益。</div><div class="line">此外，浏览器会给使用prefetch的资源一个相对较低的优先级——与使用preload的资源相比。毕竟，当前的页面比下一个页面相对更加重要。查看Link prefetching FAQ可以了解更多细节。</div></pre></td></tr></table></figure></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;只是预加载，并不运行。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;用下面两种方法即可加载完运行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 预加载Css&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link rel=&amp;quot;preload&amp;quot; as=&amp;quot;style&amp;quot; href=&amp;quot;async_style.css&amp;quot; onload=&amp;quot;this.rel=&amp;apos;stylesheet&amp;apos;&amp;quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 预加载js&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;lt;link rel=&amp;quot;preload&amp;quot; as=&amp;quot;script&amp;quot; href=&amp;quot;async_script.js&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          onload=&amp;quot;var script = document.createElement(&amp;apos;script&amp;apos;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        script.src = this.href;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        document.body.appendChild(script);&amp;quot;&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content&quot;&gt;参考MDN&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/&quot;&gt;参考&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://master-origin-loadcss.fgview.com/test/preload.html&quot;&gt;DEMO&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;link rel=&quot;prefetch&quot;&gt; 已经被许多浏览器支持了相当长的时间，但它是意图预获取一些资源，&lt;br&gt;以备下一个导航/页面使用（比如，当你去到下一个页面时）。&lt;br&gt;这很好，但对当前的页面并没有什么助益。&lt;br&gt;此外，浏览器会给使用prefetch的资源一个相对较低的优先级——与使用preload的资源相比。毕竟，当前的页面比下一个页面相对更加重要。查看Link prefetching FAQ可以了解更多细节。&lt;br&gt;
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/di
     
     </summary>
     

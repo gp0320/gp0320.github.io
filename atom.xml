@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blook.me/"/>
-  <updated>2018-06-27T12:49:37.009Z</updated>
+  <updated>2018-11-07T08:32:47.605Z</updated>
   <id>http://blook.me/</id>
   
   <author>
@@ -16,11 +16,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>link之preload</title>
+    <link href="http://blook.me/2018/11/07/link%E4%B9%8Bpreload/"/>
+    <id>http://blook.me/2018/11/07/link之preload/</id>
+    <published>2018-11-07T11:20:27.000Z</published>
+    <updated>2018-11-07T08:32:47.605Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">只是预加载，并不运行。</div><div class="line"></div><div class="line">用下面两种方法即可加载完运行</div><div class="line"></div><div class="line">// 预加载Css</div><div class="line">&lt;link rel=&quot;preload&quot; as=&quot;style&quot; href=&quot;async_style.css&quot; onload=&quot;this.rel=&apos;stylesheet&apos;&quot;&gt;</div><div class="line"></div><div class="line">// 预加载js</div><div class="line">  &lt;link rel=&quot;preload&quot; as=&quot;script&quot; href=&quot;async_script.js&quot;</div><div class="line">          onload=&quot;var script = document.createElement(&apos;script&apos;);</div><div class="line">        script.src = this.href;</div><div class="line">        document.body.appendChild(script);&quot;&gt;</div></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content" target="_blank" rel="external">参考MDN</a><br><a href="https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/" target="_blank" rel="external">参考</a><br><a href="https://master-origin-loadcss.fgview.com/test/preload.html" target="_blank" rel="external">DEMO</a></p>
+<p><link rel="prefetch"> 已经被许多浏览器支持了相当长的时间，但它是意图预获取一些资源，<br>以备下一个导航/页面使用（比如，当你去到下一个页面时）。<br>这很好，但对当前的页面并没有什么助益。<br>此外，浏览器会给使用prefetch的资源一个相对较低的优先级——与使用preload的资源相比。毕竟，当前的页面比下一个页面相对更加重要。查看Link prefetching FAQ可以了解更多细节。<br><a id="more"></a></p>
+<p>&gt;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;只是预加载，并不运行。&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;用下面两种方法即可加载完运行&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 预加载Css&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;link rel=&amp;quot;preload&amp;quot; as=&amp;quot;style&amp;quot; href=&amp;quot;async_style.css&amp;quot; onload=&amp;quot;this.rel=&amp;apos;stylesheet&amp;apos;&amp;quot;&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 预加载js&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;lt;link rel=&amp;quot;preload&amp;quot; as=&amp;quot;script&amp;quot; href=&amp;quot;async_script.js&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;          onload=&amp;quot;var script = document.createElement(&amp;apos;script&amp;apos;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        script.src = this.href;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        document.body.appendChild(script);&amp;quot;&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content&quot;&gt;参考MDN&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.smashingmagazine.com/2016/02/preload-what-is-it-good-for/&quot;&gt;参考&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://master-origin-loadcss.fgview.com/test/preload.html&quot;&gt;DEMO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;link rel=&quot;prefetch&quot;&gt; 已经被许多浏览器支持了相当长的时间，但它是意图预获取一些资源，&lt;br&gt;以备下一个导航/页面使用（比如，当你去到下一个页面时）。&lt;br&gt;这很好，但对当前的页面并没有什么助益。&lt;br&gt;此外，浏览器会给使用prefetch的资源一个相对较低的优先级——与使用preload的资源相比。毕竟，当前的页面比下一个页面相对更加重要。查看Link prefetching FAQ可以了解更多细节。&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>NVM的安装和命令</title>
     <link href="http://blook.me/2018/06/10/NVM%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%91%BD%E4%BB%A4/"/>
     <id>http://blook.me/2018/06/10/NVM的安装和命令/</id>
     <published>2018-06-10T11:10:27.000Z</published>
-    <updated>2018-06-27T12:49:37.009Z</updated>
+    <updated>2018-11-07T08:39:32.925Z</updated>
     
     <content type="html"><![CDATA[<h2 id="mac下的安装"><a href="#mac下的安装" class="headerlink" title="mac下的安装"></a>mac下的安装</h2><p>mac下面的安装，其实就可以按照linux的安装就可以了！安装的命令我们可以在nvm的github的资源上面得到安装方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
@@ -29,9 +53,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">touch   .bash_profile</div></pre></td></tr></table></figure>
 <p>打开<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">open   .bash_profile</div></pre></td></tr></table></figure></p>
 <p>如果在linux中最好用vi打开你需要的文件，这时候把提示的内容copy进去就可以了！<br>使用命令查看安装的版本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nvm -version</div></pre></td></tr></table></figure></p>
-<p>这样我们就把windows端和mac端的nvm安装完成了！<br>mac下的nvm经常使用命令的总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">nvm --help                          显示所有信息</div><div class="line">nvm --version                       显示当前安装的nvm版本</div><div class="line">nvm install [-s] &lt;version&gt;          安装指定的版本，如果不存在.nvmrc,就从指定的资源下载安装</div><div class="line">nvm install [-s] &lt;version&gt;  -latest-npm 安装指定的版本，平且下载最新的npm</div><div class="line">nvm uninstall &lt;version&gt;             卸载指定的版本</div><div class="line">nvm use [--silent] &lt;version&gt;        使用已经安装的版本  切换版本</div><div class="line">nvm current                         查看当前使用的node版本</div><div class="line">nvm ls                              查看已经安装的版本</div><div class="line">nvm ls  &lt;version&gt;                   查看指定版本</div><div class="line">nvm ls-remote                       显示远程所有可以安装的nodejs版本</div><div class="line">nvm ls-remote --lts                 查看长期支持的版本</div><div class="line">nvm install-latest-npm              安装罪行的npm</div><div class="line">nvm reinstall-packages &lt;version&gt;    重新安装指定的版本</div><div class="line">nvm cache dir                       显示nvm的cache</div><div class="line">nvm cache clear                     清空nvm的cache</div></pre></td></tr></table></figure></p>
+<p>这样我们就把windows端和mac端的nvm安装完成了！<br>mac下的nvm经常使用命令的总结：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> nvm alias default v8.12.0   默认版本设置</div><div class="line"></div><div class="line">nvm --help                          显示所有信息</div><div class="line">nvm --version                       显示当前安装的nvm版本</div><div class="line">nvm install [-s] &lt;version&gt;          安装指定的版本，如果不存在.nvmrc,就从指定的资源下载安装</div><div class="line">nvm install [-s] &lt;version&gt;  -latest-npm 安装指定的版本，平且下载最新的npm</div><div class="line">nvm uninstall &lt;version&gt;             卸载指定的版本</div><div class="line">nvm use [--silent] &lt;version&gt;        使用已经安装的版本  切换版本</div><div class="line">nvm current                         查看当前使用的node版本</div><div class="line">nvm ls                              查看已经安装的版本</div><div class="line">nvm ls  &lt;version&gt;                   查看指定版本</div><div class="line">nvm ls-remote                       显示远程所有可以安装的nodejs版本</div><div class="line">nvm ls-remote --lts                 查看长期支持的版本</div><div class="line">nvm install-latest-npm              安装罪行的npm</div><div class="line">nvm reinstall-packages &lt;version&gt;    重新安装指定的版本</div><div class="line">nvm cache dir                       显示nvm的cache</div><div class="line">nvm cache clear                     清空nvm的cache</div></pre></td></tr></table></figure></p>
 <blockquote>
 <p>nodejs具体安装过程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nvm install 6.9.1</div></pre></td></tr></table></figure></p>
+<p>linux安装nodejs<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">安装nvm--node版本管理</div><div class="line"></div><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash</div><div class="line"></div><div class="line">nvm list-remote #列出所有的node版本</div><div class="line"></div><div class="line">nvm install xxx #安装指定版本的node</div><div class="line"></div><div class="line">nvm list #列出已安装的node版本</div><div class="line"></div><div class="line">nvm use xxx  or nvm alias default  #切换到xxx版本</div></pre></td></tr></table></figure></p>
 </blockquote>
 ]]></content>
     
@@ -49,7 +74,7 @@
     <link href="http://blook.me/2018/05/01/module/"/>
     <id>http://blook.me/2018/05/01/module/</id>
     <published>2018-05-01T08:26:24.000Z</published>
-    <updated>2018-06-27T12:33:19.146Z</updated>
+    <updated>2018-06-27T12:33:19.147Z</updated>
     
     <content type="html"><![CDATA[<h2 id="require-的用法"><a href="#require-的用法" class="headerlink" title="require 的用法"></a>require 的用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> require()：加载一个外部模块 </div><div class="line">· require.resolve()：解析一个模块名到它的绝对路径 </div><div class="line">· require.main：主模块 </div><div class="line">· require.cache：所有缓存好的模块</div><div class="line">· ·require.extensions：根据其扩展名，对于每个有效的文件类型可使用的编制方法</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -95,7 +120,7 @@
     <link href="http://blook.me/2018/04/02/nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://blook.me/2018/04/02/nginx学习笔记/</id>
     <published>2018-04-02T11:55:27.000Z</published>
-    <updated>2018-06-27T12:41:19.898Z</updated>
+    <updated>2018-06-27T12:41:19.899Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">########### 每个指令必须有分号结束。#################</div><div class="line">#user administrator administrators;  #配置用户或者组，默认为nobody nobody。</div><div class="line">#worker_processes 2;  #允许生成的进程数，默认为1</div><div class="line">#pid /nginx/pid/nginx.pid;   #指定nginx进程运行文件存放地址</div><div class="line">error_log log/error.log debug;  #制定日志路径，级别。这个设置可以放入全局块，http块，server块，级别以此为：debug|info|notice|warn|error|crit|alert|emerg</div><div class="line">events &#123;</div><div class="line">    accept_mutex on;   #设置网路连接序列化，防止惊群现象发生，默认为on</div><div class="line">    multi_accept on;  #设置一个进程是否同时接受多个网络连接，默认为off</div><div class="line">    #use epoll;      #事件驱动模型，select|poll|kqueue|epoll|resig|/dev/poll|eventport</div><div class="line">    worker_connections  1024;    #最大连接数，默认为512</div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    include       mime.types;   #文件扩展名与文件类型映射表</div><div class="line">    default_type  application/octet-stream; #默认文件类型，默认为text/plain</div><div class="line">    #access_log off; #取消服务日志    </div><div class="line">    log_format myFormat &apos;$remote_addr–$remote_user [$time_local] $request $status $body_bytes_sent $http_referer $http_user_agent $http_x_forwarded_for&apos;; #自定义格式</div><div class="line">    access_log log/access.log myFormat;  #combined为日志格式的默认值</div><div class="line">    sendfile on;   #允许sendfile方式传输文件，默认为off，可以在http块，server块，location块。</div><div class="line">    sendfile_max_chunk 100k;  #每个进程每次调用传输数量不能大于设定的值，默认为0，即不设上限。</div><div class="line">    keepalive_timeout 65;  #连接超时时间，默认为75s，可以在http，server，location块。</div><div class="line"></div><div class="line">    upstream mysvr &#123;   </div><div class="line">      server 127.0.0.1:7878;</div><div class="line">      server 192.168.10.121:3333 backup;  #热备</div><div class="line">    &#125;</div><div class="line">    error_page 404 https://www.baidu.com; #错误页</div><div class="line">    server &#123;</div><div class="line">        keepalive_requests 120; #单连接请求上限次数。</div><div class="line">        listen       4545;   #监听端口</div><div class="line">        server_name  127.0.0.1;   #监听地址       </div><div class="line">        location  ~*^.+$ &#123;       #请求的url过滤，正则匹配，~为区分大小写，~*为不区分大小写。</div><div class="line">           #root path;  #根目录</div><div class="line">           #index vv.txt;  #设置默认页</div><div class="line">           proxy_pass  http://mysvr;  #请求转向mysvr 定义的服务器列表</div><div class="line">           deny 127.0.0.1;  #拒绝的ip</div><div class="line">           allow 172.18.5.54; #允许的ip           </div><div class="line">        &#125; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -125,7 +150,7 @@
     <link href="http://blook.me/2018/03/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3/"/>
     <id>http://blook.me/2018/03/29/计算机网络相关/</id>
     <published>2018-03-29T05:03:50.000Z</published>
-    <updated>2018-04-18T07:41:35.649Z</updated>
+    <updated>2018-04-18T07:41:35.650Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>计算机通信 是两个运行的进程之间的通信</li>
@@ -202,7 +227,7 @@
     <link href="http://blook.me/2018/03/27/css%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97/"/>
     <id>http://blook.me/2018/03/27/css权重计算/</id>
     <published>2018-03-27T03:28:41.000Z</published>
-    <updated>2018-03-27T03:39:22.512Z</updated>
+    <updated>2018-03-27T03:39:22.513Z</updated>
     
     <content type="html"><![CDATA[<img src="/2018/03/27/css权重计算/css1.png" alt="css" title="css">
 <a id="more"></a>
@@ -356,7 +381,7 @@
     <link href="http://blook.me/2017/07/24/vue-vuex-axios-router%E5%88%9D%E6%AC%A1%E5%88%86%E4%BA%AB/"/>
     <id>http://blook.me/2017/07/24/vue-vuex-axios-router初次分享/</id>
     <published>2017-07-24T09:11:08.000Z</published>
-    <updated>2018-03-04T09:45:05.997Z</updated>
+    <updated>2018-03-04T09:45:05.998Z</updated>
     
     <content type="html"><![CDATA[<h2 id="配置转发"><a href="#配置转发" class="headerlink" title="配置转发"></a>配置转发</h2><ul>
 <li>文件路径：config/index.js<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">port: 4444, // 端口</div><div class="line">proxyTable: &#123;</div><div class="line"></div><div class="line">    &apos;/dev&apos;:&#123;</div><div class="line">      target: &apos;http://dev.api.pdb.com/http/&apos;,</div><div class="line">      pathRewrite: &#123;</div><div class="line">        &apos;^/dev&apos;: &apos;&apos;   // &apos;dev&apos;转换成空字符串</div><div class="line">      &#125;,</div><div class="line">      changeOrigin: true, // 代理转发</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
@@ -499,7 +524,7 @@
     <link href="http://blook.me/2017/05/10/yarn%E5%AD%A6%E4%B9%A0/"/>
     <id>http://blook.me/2017/05/10/yarn学习/</id>
     <published>2017-05-10T11:10:27.000Z</published>
-    <updated>2018-06-27T12:41:19.895Z</updated>
+    <updated>2018-06-27T12:41:19.896Z</updated>
     
     <content type="html"><![CDATA[<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn init</div></pre></td></tr></table></figure>
 <p>当然可以加参数 –yes/-y 来自动回答所有的问题(yes),便捷的生成一个package.json</p>
